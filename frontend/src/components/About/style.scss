@@ -1,0 +1,28 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.about-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.social-media-icons {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.social-media-icon {
+  display: inline-block;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  color: #000; /* Это можно заменить на переменную темы */
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #007bff; /* Это можно заменить на переменную темы */
+  }
+}
+  
