@@ -1,0 +1,169 @@
+.navbar {
+    background-color: rgb(25, 25, 36); // Измените на ваши переменные темы
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    color: white;
+    text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        z-index: 1;
+        width: 100%;
+        padding: 0 24px;
+        max-width: 1200px;
+    }
+
+    &__logo {
+        width: 80%;
+        padding: 0 6px;
+
+        &-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 20px;
+            cursor: pointer;
+
+            @media (max-width: 640px) {
+                padding: 0;
+            }
+        }
+    }
+
+    &__span {
+        padding: 0 4px;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+        padding: 0 6px;
+        list-style: none;
+        color: white;
+        text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__item {
+        a {
+
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+            color: white;
+            text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+
+            &:hover {
+                color: hsla(271, 100%, 50%, 1);
+                scale: 0.9;
+                transition: 0.4s;
+                cursor: pointer;
+                text-shadow: 2px 2px 80px rgba(86, 53, 116, 0.905);
+            }
+        }
+    }
+
+    &__button-container {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 0 6px;
+
+        @media screen and (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__github-button {
+        border: 1.8px solid white; // Измените на ваши переменные темы
+        display: flex;
+        align-items: center;
+        height: 70%;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 0 20px;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 16px;
+        transition: all 0.6s ease-in-out;
+        color: white;
+        text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+
+        &:hover {
+            scale: 0.9;
+            cursor: pointer;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    &__mobile-icon {
+        display: none;
+
+        @media screen and (max-width: 768px) {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-100%, 60%);
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: white;
+            text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+        }
+    }
+
+    &__mobile-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        padding: 12px 40px 24px 40px;
+        background: #333; // Измените на ваши переменные темы
+        transition: all 0.6s ease-in-out;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    }
+
+    &__mobile-link {
+        color: white;
+        text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+
+        &:hover {
+            scale: 0.9;
+            cursor: pointer; // Измените на ваши переменные темы
+        }
+    }
+}

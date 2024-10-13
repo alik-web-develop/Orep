@@ -1,45 +1,40 @@
-import React from 'react'
-import HeroBgAnimation from '../HeroBgAnimation'
-import { HeroContainer, HeroBg, HeroLeftContainer, Img, HeroRightContainer, HeroInnerContainer, TextLoop, Title, Span, SubTitle, ResumeButton } from './HeroStyle'
-import HeroImg from '../../images/HeroImage.jpg'
+import React from 'react';
+import HeroBgAnimation from '../HeroBgAnimation';
+import './HeroSection.scss'; // Импорт стилей
+import HeroImg from '../../images/HeroImage.jpg';
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
 const HeroSection = () => {
-    return (
-        <div id="about">
-            <HeroContainer>
-                <HeroBg>
-                    <HeroBgAnimation />
-                </HeroBg>
-                <HeroInnerContainer >
-                    <HeroLeftContainer id="Left">
-                        <Title>Hi, I am <br /> {Bio.name}</Title>
-                        <TextLoop>
-                            I am a
-                            <Span>
-                                <Typewriter
-                                    options={{
-                                        strings: Bio.roles,
-                                        autoStart: true,
-                                        loop: true,
-                                    }}
-                                />
-                            </Span>
-                        </TextLoop>
-                        <SubTitle>{Bio.description}</SubTitle>
-                        <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
-                    </HeroLeftContainer>
-
-                    <HeroRightContainer id="Right">
-
-                        <Img src={HeroImg} alt="hero-image" />
-                    </HeroRightContainer>
-                </HeroInnerContainer>
-
-            </HeroContainer>
+  return (
+    <div id="about" className="hero-container">
+      <div className="hero-bg">
+        <HeroBgAnimation />
+      </div>
+      <div className="hero-inner-container">
+        <div className="hero-left-container">
+          <div className="hero-title">Hi, I am <br /> {Bio.name}</div>
+          <div className="hero-text-loop">
+            I am a
+            <span className="hero-span">
+              <Typewriter
+                options={{
+                  strings: Bio.roles,
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </span>
+          </div>
+          <div className="hero-subtitle">{Bio.description}</div>
+          <a href={Bio.resume} target='display' className="hero-resume-button">Check Resume</a>
         </div>
-    )
+        <div className="hero-right-container">
+          <img src={HeroImg} alt="hero" className="hero-img" />
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default HeroSection
+export default HeroSection;

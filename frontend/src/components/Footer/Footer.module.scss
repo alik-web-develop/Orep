@@ -1,0 +1,90 @@
+.footerContainer {
+    width: 100%;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footerWrapper {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    padding: 1rem;
+    color: #fff; // Замените на правильную тему, если нужно.
+  }
+  
+  .logo {
+    font-weight: 600;
+    font-size: 20px;
+    color: hsla(271, 100%, 50%, 1); // Цвет primary темы
+
+    &:hover{
+        transform: scale(0.9);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+  }
+  
+  .nav {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+  
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+  
+  .navLink {
+    color: #fff; // Цвет текста primary темы
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.2s ease-in-out;
+  
+    &:hover {
+      color: hsla(271, 100%, 50%, 1); // Цвет primary темы
+      scale: 0.9;
+      transition: 0.5s;
+    }
+  
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  .socialMediaIcons {
+    display: flex;
+    margin-top: 1rem;
+  }
+  
+  .socialMediaIcon {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    color: #fff; // Цвет текста primary темы
+    transition: color 0.2s ease-in-out;
+  
+    &:hover {
+      color: hsla(271, 100%, 50%, 1); // Цвет primary темы
+      transform: scale(0.9);
+    }
+  }
+  
+  .copyright {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #888; // Цвет soft2 темы
+    text-align: center;
+  }
+  
