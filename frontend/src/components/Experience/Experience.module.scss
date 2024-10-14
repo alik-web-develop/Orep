@@ -62,5 +62,10 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
+
+    &:hover{
+        cursor: pointer;
+        transition: 0.5s;
+    }
   }
   
