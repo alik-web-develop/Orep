@@ -108,6 +108,7 @@
         transition: all 0.6s ease-in-out;
         color: white;
         text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+        transition: 0.3s ease;
 
         &:hover {
             scale: 0.9;
@@ -129,10 +130,10 @@
         cursor: pointer;
 
         &:hover {
-            box-shadow: 4px 4px 10px hsla(271, 100%, 50%, 1),
-                -4px -4px 10px hsla(271, 100%, 50%, 1),
-                4px -4px 10px hsla(271, 100%, 50%, 1),
-                -4px 4px 10px hsla(271, 100%, 50%, 1);
+            box-shadow: 2px 2px 8px hsla(271, 100%, 50%, 1),
+                -2px -2px 8px hsla(271, 100%, 50%, 1),
+                2px -2px 8px hsla(271, 100%, 50%, 1),
+                -2px 2px 8px hsla(271, 100%, 50%, 1);
         }
     }
 
