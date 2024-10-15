@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="navbar__container">
         <div className="navbar__logo">
           <a className="navbar__logo-link" href="/">
-            <DiCssdeck size="3rem" /> <span className="navbar__span">Portfolio</span>
+            <DiCssdeck size="3rem" /> <span className="navbar__span">FullFusion</span>
           </a>
         </div>
         <div className="navbar__mobile-icon">

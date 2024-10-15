@@ -127,12 +127,13 @@
         border: 2px #2A2B3A solid;
         // color: $light;
         cursor: pointer;
+        transition: 0.3s;
 
         &:hover {
-            box-shadow: 4px 4px 10px hsla(271, 100%, 50%, 1),
-                -4px -4px 10px hsla(271, 100%, 50%, 1),
-                4px -4px 10px hsla(271, 100%, 50%, 1),
-                -4px 4px 10px hsla(271, 100%, 50%, 1);
+            box-shadow:1px 1px 10px rgb(79, 10, 143),
+                -1px -1px 10px rgb(79, 10, 143),
+                1px -1px 10px rgb(79, 10, 143),
+                -1px 1px 10px rgb(79, 10, 143);
         }
     }
 
