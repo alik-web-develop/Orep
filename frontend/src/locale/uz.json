@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "navigation": {
+            "home": "Bosh sahifa",
+            "about": "Biz haqimizda",
+            "skills": "Qulayliklar",
+            "projects": "Xizmatlar",
+            "experience": "Tajriba",
+            "education": "Ta'lim",
+            "github": "Github Profil"
+        },
+        "hero": {
+            "hello": "Salom, biz",
+            "title": "FullFusion",
+            "weAre": "Biz",
+            "description": "Biz g'ayratli va ko'p qirrali shaxslarmiz, har doim yangi muammolarni hal qilishga tayyormiz. O'rganishga ishtiyoq bilan biz yuqori sifatli natijalarni taqdim etishga intilamiz. Ijobiy munosabat va o'sish tafakkuri bilan biz mazmunli hissa qo'shishga va birgalikda katta yutuqlarga erishishga tayyormiz.",
+            "resume": "Rezyumeni ko'rish"
+        }
+    }
+}

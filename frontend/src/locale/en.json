@@ -1,0 +1,20 @@
+{
+    "translation": {
+        "navigation": {
+            "home": "Home",
+            "about": "About",
+            "skills": "Skills",
+            "projects": "Projects",
+            "experience": "Experience",
+            "education": "Education",
+            "github": "Github Profile"
+        },
+        "hero": {
+            "hello": "Hello, we are",
+            "title": "FullFusion",
+            "weAre": "We are",
+            "description": "We are motivated and versatile individuals, always ready to take on new challenges. With a passion for learning, we are committed to delivering high-quality results. With a positive attitude and a growth mindset, we are prepared to make a meaningful contribution and achieve great things together.",
+            "resume": "Check Resume"
+        }
+    }
+}

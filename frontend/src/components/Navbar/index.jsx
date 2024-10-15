@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
-import './style.scss'; 
+import { Link, NavLink } from "react-router-dom";
+import NavLinkDrp from './NavLinksDrp.jsx';
+import { useTranslation } from "react-i18next"
+import './style.scss';
+import { context } from "../../store"
 
-const Navbar = () => {
+function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t, i18n: { changeLanguage } } = useTranslation();
 
+  const { state, dispatch } = useContext(context)
+  function activateLang(language) {
+    dispatch({ type: "SET_LANG", payload: language.code })
+    changeLanguage(language.code)
+  }
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -15,6 +25,7 @@ const Navbar = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
 
   return (
     <nav className="navbar">
@@ -28,14 +39,15 @@ const Navbar = () => {
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </div>
         <ul className="navbar__items">
-          <li className="navbar__item"><a href="#about">About</a></li>
-          <li className="navbar__item"><a href='#skills'>Skills</a></li>
-          <li className="navbar__item"><a href='#experience'>Experience</a></li>
-          <li className="navbar__item"><a href='#projects'>Projects</a></li>
-          <li className="navbar__item"><a href='#education'>Education</a></li>
+          <li className="navbar__item"><a href="#about">{t('navigation.about')}</a></li>
+          <li className="navbar__item"><a href='#skills'>{t('navigation.skills')}</a></li>
+          <li className="navbar__item"><a href='#experience'>{t('navigation.experience')}</a></li>
+          <li className="navbar__item"><a href='#projects'>{t('navigation.projects')}</a></li>
+          <li className="navbar__item"><a href='#education'>{t('navigation.education')}</a></li>
+          <NavLinkDrp items={state.languages} activateFn={activateLang} />
         </ul>
         <div className="navbar__button-container">
-          <button className="navbar__github-button" onClick={openModal}>GitHub Profile</button>
+          <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
         </div>
         {isOpen && (
           <div className="navbar__mobile-menu">

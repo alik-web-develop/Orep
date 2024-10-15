@@ -11,10 +11,10 @@ export const Bio = {
   github_bulyon: "https://github.com/bulyon228",
   resume:
     "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
-  linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  twitter: "https://twitter.com/RishavChanda",
-  insta: "https://www.instagram.com/rishav_chanda/",
-  facebook: "https://www.facebook.com/rishav.chanda.165/",
+  linkedin: "https://www.linkedin.com",
+  twitter: "https://x.com",
+  insta: "https://www.instagram.com",
+  facebook: "https://www.facebook.com",
 };
 
 export const skills = [

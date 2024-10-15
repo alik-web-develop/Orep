@@ -1,16 +1,16 @@
 import React from 'react';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import TwitterIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Bio } from '../../data/constants';
+import { Bio } from '../../data/constants.jsx';
 import styles from './Footer.module.scss';
 
 function Footer() {
   return (
     <div className={styles.footerContainer}>
       <footer className={styles.footerWrapper}>
-        <h1 className={styles.logo}>Rishav Chanda</h1>
+        <h1 className={styles.logo}>FullFusion</h1>
         <nav className={styles.nav}>
           <a className={styles.navLink} href="#about">About</a>
           <a className={styles.navLink} href="#skills">Skills</a>
@@ -33,7 +33,7 @@ function Footer() {
           </a>
         </div>
         <p className={styles.copyright}>
-          &copy; 2023 Rishav Chanda. All rights reserved.
+          &copy; 2024. All rights reserved.
         </p>
       </footer>
     </div>
