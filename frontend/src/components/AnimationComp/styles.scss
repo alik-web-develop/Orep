@@ -1,0 +1,13 @@
+.animation {
+    transform: translateY(300px);
+    filter: blur(10px);
+    opacity: 0;
+    transition: 0.8s ease;
+  }
+  
+  .animation.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+  

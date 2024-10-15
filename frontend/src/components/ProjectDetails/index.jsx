@@ -3,6 +3,7 @@ import { Modal } from '@mui/material';
 import React from 'react';
 import './style.scss';  // Импортируем SCSS файл
 
+
 const Index = ({ openModal, setOpenModal }) => {
     const project = openModal?.project;
 

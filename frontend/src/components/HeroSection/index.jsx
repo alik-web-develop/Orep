@@ -4,6 +4,7 @@ import './HeroSection.scss'; // Импорт стилей
 import Logo from '../../images/logo.jpg';
 import Typewriter from 'typewriter-effect';
 import Bio from "../../db.json"; 
+import AnimatedComponent from '../AnimationComp';
 
 const HeroSection = () => {
 
@@ -11,6 +12,8 @@ const HeroSection = () => {
 
   return (
     <div id="about" className="hero-container">
+      <AnimatedComponent>
+
       <div className="hero-bg">
         <HeroBgAnimation />
       </div>
@@ -26,7 +29,7 @@ const HeroSection = () => {
                   autoStart: true,
                   loop: true,
                 }}
-              />
+                />
             </span>
           </div>
           <div className="hero-subtitle">{bioData.description}</div>
@@ -36,6 +39,7 @@ const HeroSection = () => {
           <img src={Logo} alt="hero" className="hero-img" />
         </div>
       </div>
+      </AnimatedComponent>
     </div>
   );
 }

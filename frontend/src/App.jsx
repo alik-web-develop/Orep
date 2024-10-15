@@ -14,6 +14,7 @@ import Experience from "./components/Experience/index.jsx";
 import Education from "./components/Education/index.jsx";
 import ProjectDetails from "./components/ProjectDetails/index.jsx";
 import styled from "styled-components";
+import AnimatedComponent from './components/AnimationComp';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -37,13 +38,21 @@ function App() {
         <Body>
           <HeroSection />
           <Wrapper>
+          <AnimatedComponent>
             <Skills />
+          </AnimatedComponent>
             <Experience />
           </Wrapper>
+          <AnimatedComponent>
           <Projects/>
+          </AnimatedComponent>
           <Wrapper>
+          <AnimatedComponent>
             <Education />
+          </AnimatedComponent>
+          <AnimatedComponent>
             <Contact />
+          </AnimatedComponent>
           </Wrapper>
           <Footer />
           {openModal.state &&

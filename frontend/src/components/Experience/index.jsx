@@ -7,6 +7,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import ExperienceCard from '../Cards/ExperienceCard/ExperienceCard.jsx';
 import { experiences } from '../../data/constants';
+import AnimatedComponent from '../AnimationComp/index.jsx';
 import styles from './Experience.module.scss';
 
 const Experience = () => {
@@ -19,7 +20,9 @@ const Experience = () => {
                 </div>
                 <div className={styles.timelineSection}>
                     <Timeline>
+
                         {experiences.map((experience, index) => (
+                        <AnimatedComponent>
                             <TimelineItem key={index}>
                                 <TimelineSeparator>
                                     <TimelineDot variant="outlined" color="secondary" />
@@ -31,6 +34,7 @@ const Experience = () => {
                                     <ExperienceCard experience={experience} />
                                 </TimelineContent>
                             </TimelineItem>
+                        </AnimatedComponent>
                         ))}
                     </Timeline>
                 </div>
