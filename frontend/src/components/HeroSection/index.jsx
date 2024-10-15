@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroBgAnimation from '../HeroBgAnimation';
 import './HeroSection.scss'; // Импорт стилей
-import HeroImg from '../../images/HeroImage.jpg';
+import Logo2 from '../../images/logo2.jpg';
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
@@ -13,9 +13,9 @@ const HeroSection = () => {
       </div>
       <div className="hero-inner-container">
         <div className="hero-left-container">
-          <div className="hero-title">Hi, I am <br /> {Bio.name}</div>
+          <div className="hero-title">Hello, we are <br /> {Bio.name}</div>
           <div className="hero-text-loop">
-            I am a
+            <span className="hero-span-name">We are </span>
             <span className="hero-span">
               <Typewriter
                 options={{
@@ -27,10 +27,10 @@ const HeroSection = () => {
             </span>
           </div>
           <div className="hero-subtitle">{Bio.description}</div>
-          <a href={Bio.resume} target='display' className="hero-resume-button">Check Resume</a>
+          <a href="#" target='display' className="hero-resume-button">Check Resume</a>
         </div>
         <div className="hero-right-container">
-          <img src={HeroImg} alt="hero" className="hero-img" />
+          <img src={Logo2} alt="hero" className="hero-img" />
         </div>
       </div>
     </div>
