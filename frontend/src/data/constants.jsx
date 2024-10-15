@@ -7,7 +7,8 @@ export const Bio = {
   ],
   description:
     "We are motivated and versatile individuals, always ready to take on new challenges. With a passion for learning, we are committed to delivering high-quality results. With a positive attitude and a growth mindset, we are prepared to make a meaningful contribution and achieve great things together.",
-  github: "https://github.com/rishavchanda",
+  github_mal4ik: "https://github.com/mal4ik-0",
+  github_bulyon: "https://github.com/bulyon228",
   resume:
     "https://drive.google.com/file/d/1ffZrcMcn8UatXGIaautbbqpV7ADNaETA/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",

@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import { Bio } from '../../data/constants';
-import './style.scss'; // Импорт стилей
+import './style.scss'; 
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -26,7 +35,7 @@ const Navbar = () => {
           <li className="navbar__item"><a href='#education'>Education</a></li>
         </ul>
         <div className="navbar__button-container">
-          <a className="navbar__github-button" href={Bio.github} target="_blank" rel="noopener noreferrer">Github Profile</a>
+          <button className="navbar__github-button" onClick={openModal}>GitHub Profile</button>
         </div>
         {isOpen && (
           <div className="navbar__mobile-menu">
@@ -35,10 +44,23 @@ const Navbar = () => {
             <a className="navbar__mobile-link" href='#experience' onClick={() => setIsOpen(false)}>Experience</a>
             <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>Projects</a>
             <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>Education</a>
-            <a className="navbar__github-button" style={{ padding: '10px 16px' }} href={Bio.github} target="_blank" rel="noopener noreferrer">Github Profile</a>
           </div>
         )}
       </div>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>GitHub Profiles</h2>
+            <h5>Creators:</h5>
+            <div>
+              <a href={Bio.github_mal4ik} target="_blank" rel="noopener noreferrer">First Creator</a><br />
+              <a href={Bio.github_bulyon} target="_blank" rel="noopener noreferrer">Second Creator</a>
+              <button onClick={closeModal} className="modal-close"> <span>&times;</span> </button>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

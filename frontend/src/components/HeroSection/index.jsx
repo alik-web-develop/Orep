@@ -1,7 +1,7 @@
 import React from 'react';
 import HeroBgAnimation from '../HeroBgAnimation';
 import './HeroSection.scss'; // Импорт стилей
-import Logo2 from '../../images/logo2.jpg';
+import Logo3 from '../../images/logo3.jpg';
 import Typewriter from 'typewriter-effect';
 import { Bio } from '../../data/constants';
 
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <a href="#" target='display' className="hero-resume-button">Check Resume</a>
         </div>
         <div className="hero-right-container">
-          <img src={Logo2} alt="hero" className="hero-img" />
+          <img src={Logo3} alt="hero" className="hero-img" />
         </div>
       </div>
     </div>
