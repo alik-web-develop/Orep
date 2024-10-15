@@ -1,6 +1,7 @@
 import { CloseRounded, GitHub, LinkedIn } from '@mui/icons-material';
 import { Modal } from '@mui/material';
 import React from 'react';
+import AnimatedComponent from '../AnimationComp/index.jsx';
 import './style.scss';  // Импортируем SCSS файл
 
 
@@ -34,16 +35,18 @@ const Index = ({ openModal, setOpenModal }) => {
                             <div className="label">Members</div>
                             <div className="members">
                                 {project?.member.map((member, index) => (
-                                    <div key={index} className="member">
-                                        <img className="member-image" src={member.img} alt={member.name} />
-                                        <div className="member-name">{member.name}</div>
-                                        <a href={member.github} target="new" className="icon-link">
-                                            <GitHub />
-                                        </a>
-                                        <a href={member.linkedin} target="new" className="icon-link">
-                                            <LinkedIn />
-                                        </a>
-                                    </div>
+                                    <AnimatedComponent>
+                                        <div key={index} className="member">
+                                            <img className="member-image" src={member.img} alt={member.name} />
+                                            <div className="member-name">{member.name}</div>
+                                            <a href={member.github} target="new" className="icon-link">
+                                                <GitHub />
+                                            </a>
+                                            <a href={member.linkedin} target="new" className="icon-link">
+                                                <LinkedIn />
+                                            </a>
+                                        </div>
+                                    </AnimatedComponent>
                                 ))}
                             </div>
                         </>

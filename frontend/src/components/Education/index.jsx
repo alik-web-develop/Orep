@@ -8,6 +8,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import { education, experiences } from '../../data/constants';
 import EducationCard from '../Cards/EducationCard/EducationCard.jsx';
 import styles from './Education.module.scss';
+import AnimatedComponent from '../AnimationComp/index.jsx';
 
 const EducationSection = () => {
     return (
@@ -20,15 +21,18 @@ const EducationSection = () => {
                 <div className={styles.timelineSection}>
                     <Timeline>
                         {education.map((education, index) => (
-                            <TimelineItem key={index}>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <EducationCard education={education} />
-                                </TimelineContent>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length && <TimelineConnector style={{ background: '#854CE6' }} />}
-                                </TimelineSeparator>
-                            </TimelineItem>
+                            <AnimatedComponent>
+
+                                <TimelineItem key={index}>
+                                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                        <EducationCard education={education} />
+                                    </TimelineContent>
+                                    <TimelineSeparator>
+                                        <TimelineDot variant="outlined" color="secondary" />
+                                        {index !== experiences.length && <TimelineConnector style={{ background: '#854CE6' }} />}
+                                    </TimelineSeparator>
+                                </TimelineItem>
+                            </AnimatedComponent>
                         ))}
                     </Timeline>
                 </div>
