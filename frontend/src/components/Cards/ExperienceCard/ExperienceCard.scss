@@ -21,7 +21,6 @@
 
     &:hover .experience-card__span {
         overflow: visible;
-        -webkit-line-clamp: unset;
     }
 
     border: 0.1px solid #306EE8;
@@ -114,7 +113,7 @@
 .experience-card__skills {
     display: flex;
     gap: 12px;
-    margin-top: -10px;
+    margin-top: 5px;
 }
 
 .experience-card__item-wrapper {

@@ -30,11 +30,7 @@ const ExperienceCard = ({ experience }) => {
                     </>
                 }
             </div>
-            {experience.doc &&
-                <a href={experience.doc} target="new">
-                    <img className="experience-card__document" src={experience.doc} alt="Document" />
-                </a>
-            }
+
         </div>
     );
 };

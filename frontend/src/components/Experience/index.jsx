@@ -9,32 +9,35 @@ import ExperienceCard from '../Cards/ExperienceCard/ExperienceCard.jsx';
 import { experiences } from '../../data/constants';
 import AnimatedComponent from '../AnimationComp/index.jsx';
 import styles from './Experience.module.scss';
+import { useTranslation } from "react-i18next"
 
-const Experience = () => {
+function Experience() {
+    const { t, i18n: { changeLanguage } } = useTranslation();
+
     return (
         <div className={styles.container} id="experience">
             <div className={styles.wrapper}>
-                <div className={styles.title}>Experience</div>
+                <div className={styles.title}>{t("experience.title")}</div>
                 <div className={styles.desc}>
-                    My work experience as a software engineer and working on different companies and projects.
+                    {t("experience.description")}
                 </div>
                 <div className={styles.timelineSection}>
                     <Timeline>
 
                         {experiences.map((experience, index) => (
-                        <AnimatedComponent>
-                            <TimelineItem key={index}>
-                                <TimelineSeparator>
-                                    <TimelineDot variant="outlined" color="secondary" />
-                                    {index !== experiences.length - 1 && (
-                                        <TimelineConnector style={{ background: '#854CE6' }} />
-                                    )}
-                                </TimelineSeparator>
-                                <TimelineContent sx={{ py: '12px', px: 2 }}>
-                                    <ExperienceCard experience={experience} />
-                                </TimelineContent>
-                            </TimelineItem>
-                        </AnimatedComponent>
+                            <AnimatedComponent>
+                                <TimelineItem key={index}>
+                                    <TimelineSeparator>
+                                        <TimelineDot variant="outlined" color="secondary" />
+                                        {index !== experiences.length - 1 && (
+                                            <TimelineConnector style={{ background: '#854CE6' }} />
+                                        )}
+                                    </TimelineSeparator>
+                                    <TimelineContent sx={{ py: '12px', px: 2 }}>
+                                        <ExperienceCard experience={experience} />
+                                    </TimelineContent>
+                                </TimelineItem>
+                            </AnimatedComponent>
                         ))}
                     </Timeline>
                 </div>

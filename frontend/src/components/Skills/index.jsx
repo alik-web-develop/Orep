@@ -1,14 +1,22 @@
 import React from 'react';
 import './styles.scss'; // Импортируем стили
 import { skills } from '../../data/constants';
+import { context } from "../../store"
+import { useState, useEffect, useContext } from 'react';
+import { useTranslation } from "react-i18next"
 
-const Skills = () => {
+
+
+
+function Skills() {
+  const { t, i18n: { changeLanguage } } = useTranslation();
+
   return (
     <div className="skills-container" id="skills">
       <div className="skills-wrapper">
-        <h1 className="skills-title">Skills</h1>
+        <h1 className="skills-title">{t("skills.title")}</h1>
         <p className="skills-desc">
-          Here are some of my skills on which I have been working on for the past 2 years.
+          {t("skills.description")}
         </p>
         <div className="skills-list">
           {skills.map((skill) => (

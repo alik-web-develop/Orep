@@ -15,6 +15,14 @@
             "weAre": "Biz",
             "description": "Biz g'ayratli va ko'p qirrali shaxslarmiz, har doim yangi muammolarni hal qilishga tayyormiz. O'rganishga ishtiyoq bilan biz yuqori sifatli natijalarni taqdim etishga intilamiz. Ijobiy munosabat va o'sish tafakkuri bilan biz mazmunli hissa qo'shishga va birgalikda katta yutuqlarga erishishga tayyormiz.",
             "resume": "Rezyumeni ko'rish"
+        },
+        "skills": {
+            "title": "Qulayliklar",
+            "description": "Bu yerda 2 yil davomida ishlagan mahoratlarim."
+        },
+        "experience": {
+            "title": "Tajriba",
+            "description": "Bizning ishlab chiqarish tajribamiz va barcha ishlagan kompaniyalar va proyektlarimiz."
         }
     }
 }

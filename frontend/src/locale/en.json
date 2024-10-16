@@ -15,6 +15,14 @@
             "weAre": "We are",
             "description": "We are motivated and versatile individuals, always ready to take on new challenges. With a passion for learning, we are committed to delivering high-quality results. With a positive attitude and a growth mindset, we are prepared to make a meaningful contribution and achieve great things together.",
             "resume": "Check Resume"
+        },
+        "skills": {
+            "title": "Skills",
+            "description": "Here are some of my skills on which I have been working on for the past 2 years."
+        },
+        "experience": {
+            "title": "Experience",
+            "description": "My work experience as a software engineer and working on different companies and projects."
         }
     }
 }

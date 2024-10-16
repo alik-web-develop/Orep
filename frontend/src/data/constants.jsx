@@ -200,7 +200,7 @@ export const experiences = [
       "Node Js",
       " Next Js",
     ],
-    doc: "https://media.licdn.com/dms/image/D4D2DAQFlp60ZqHuaFQ/profile-treasury-image-shrink_1280_1280/0/1691180828512?e=1692381600&v=beta&t=mM5Y_NE5EPlQhez5FAN6NLVSKcO_Ojt_9Gq3mnFGkAQ",
+    doc: "https://media.licdn.com/dms/image/D5622AQHQmGOPTNrVzA/feedshare-shrink_800/0/1682996945101?e=2147483647&v=beta&t=HvMBbvIooD1XebtRt5zUZA_28P15Xe07CuRgb4-MRiw",
   },
   {
     id: 0,
@@ -255,12 +255,11 @@ export const experiences = [
     role: "Android Developer",
     company: "DSC KIIT",
     date: "Nov2021 - Present",
-    desc: "As an Android developer at the Google Developers Student Club (GDCS), I have had the opportunity to work on exciting projects and collaborate with talented developers who share my passion for technology. Through my involvement with GDCS, I have also had the opportunity to host and participate in numerous events, including hackathons, study jams, and workshops.",
+    desc: "As an Android developer at the Google Developers Student Club (GDCS), I have had the opportunity to work on exciting projects and collaborate with talented developers who share my passion for technology. ",
     skills: [
       "Leadership",
       "Mobile Application Development",
       "Kotlin",
-      "XML",
       "Figma",
     ],
   },
@@ -270,7 +269,7 @@ export const experiences = [
     role: "Android Developer Intern",
     company: "Rudraksha Welffare Foundation",
     date: "June 2021 - Oct 2021",
-    desc: "As an Android Developer Intern at Rudraksha Welfare Foundation from June 2021 to October 2021, I gained valuable hands-on experience in application development. During my tenure, I contributed to the development of the application's back-end cloud functions using Firebase and implemented a front-end with the MVVM structure, which was designed using Figma. I also added a one-to-one video call feature, conceptualized new features, and optimized app performance. This internship helped me enhance my skills in Android development and gave me an opportunity to work in a collaborative team environment.",
+    desc: "As an Android Developer Intern at Rudraksha Welfare Foundation from June 2021 to October 2021, I gained valuable hands-on experience in application development. During my tenure, I contributed to the development of the application's back-end cloud functions using Firebase and implemented a front-end.",
     skills: [
       "Android",
       "Java",

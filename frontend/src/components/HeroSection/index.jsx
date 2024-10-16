@@ -15,11 +15,7 @@ function HeroSection() {
   const bioData = Bio.Bio[0];
   const { t, i18n: { changeLanguage } } = useTranslation();
 
-  const { state, dispatch } = useContext(context)
-  function activateLang(language) {
-    dispatch({ type: "SET_LANG", payload: language.code })
-    changeLanguage(language.code)
-  }
+
   return (
 
     <div id="about" className="hero-container">
