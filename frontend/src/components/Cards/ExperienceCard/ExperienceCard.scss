@@ -2,35 +2,49 @@
     width: 650px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 12px 16px;
+    padding: 22px 16px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     transition: all 0.3s ease-in-out;
     position: relative;
     overflow: hidden;
+    border: 0.1px solid #306EE8;
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 
     &:hover {
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
         transform: translateY(-5px);
+        padding-bottom: 40px;
     }
 
-    &:hover .experience-card__document {
-        display: flex;
+    &:hover .rated {
+        opacity: 1;
+        visibility: visible;
     }
-
-    &:hover .experience-card__span {
-        overflow: visible;
-    }
-
-    border: 0.1px solid #306EE8;
-    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
 
     @media only screen and (max-width: 768px) {
         padding: 10px;
         gap: 8px;
         width: 300px;
     }
+}
+
+.rated {
+    display: flex;
+    gap: 10px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden; 
+    position: absolute;
+    bottom: 3px;
+    right: 16px;
+}
+
+.rated span {
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 .experience-card__top {
@@ -139,7 +153,7 @@
     width: fit-content;
     background-color: #000;
     border-radius: 10px;
-    
+
     &:hover {
         cursor: pointer;
         opacity: 0.8;

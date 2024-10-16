@@ -2,7 +2,7 @@
     transform: translateY(300px);
     filter: blur(5px);
     opacity: 0;
-    transition: 0.8s ease;
+    transition: 0.5s ease-in-out;
   }
   
   .animation.active {

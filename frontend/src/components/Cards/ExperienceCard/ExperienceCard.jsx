@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ExperienceCard.scss';
+import { BiDislike, BiSolidDislike, BiLike, BiSolidLike } from "react-icons/bi";
 
-const ExperienceCard = ({ experience }) => {
+function ExperienceCard({ experience }) {
+    const [liked, setLiked] = useState(false);
+    const [disliked, setDisliked] = useState(false);
+
+    function handleLikeClick() {
+        setLiked(!liked);
+        if (disliked) setDisliked(false);
+    };
+
+    function handleDislikeClick() {
+        setDisliked(!disliked);
+        if (liked) setLiked(false);
+    };
+
     return (
         <div className="experience-card__container">
             <div className="experience-card__top">
@@ -13,10 +27,10 @@ const ExperienceCard = ({ experience }) => {
                 </div>
             </div>
             <div className="experience-card__description">
-                {experience?.desc &&
+                {experience?.desc && (
                     <span className="experience-card__span">{experience?.desc}</span>
-                }
-                {experience?.skills &&
+                )}
+                {experience?.skills && (
                     <>
                         <br />
                         <div className="experience-card__skills">
@@ -28,11 +42,18 @@ const ExperienceCard = ({ experience }) => {
                             </div>
                         </div>
                     </>
-                }
+                )}
             </div>
-
+            <div className="rated">
+                <span onClick={handleLikeClick} style={{ cursor: 'pointer' }}>
+                    {liked ? <BiSolidLike /> : <BiLike />}
+                </span>
+                <span onClick={handleDislikeClick} style={{ cursor: 'pointer' }}>
+                    {disliked ? <BiSolidDislike /> : <BiDislike />}
+                </span>
+            </div>
         </div>
     );
-};
+}
 
 export default ExperienceCard;
