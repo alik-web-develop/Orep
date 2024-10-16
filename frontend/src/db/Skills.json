@@ -1,0 +1,102 @@
+[
+    {
+        "title": "Frontend",
+        "skills": [
+            {
+                "name": "React Js",
+                "image": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"
+            },
+            {
+                "name": "Redux",
+                "image": "https://d33wubrfki0l68.cloudfront.net/0834d0215db51e91525a25acf97433051f280f2f/c30f5/img/redux.svg"
+            },
+            {
+                "name": "Next Js",
+                "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACTklEQVR4Ab1XAaQqURB9DyohSykREpRIQSAlBCoECKUFCSRCBBEAaSEABQEoCIEASCwAUICALgCo83do0//9v819XX845O7VnDkzOzP7JWGaBd3C3IJpQVjAHeJ+Rs9a97vKLGrBsB1KgMhEP3FMUUwt4ENMfxr1yQIU4SSjRkbeOZtERmHk6pXQVDlnkHh9S+QLTm1hkiz4n/gzFQuny9FoFLquE+i34x+n02k0m00UCoV3BIzn3MMJrVYLtp1OJ0cS/X4f5/MZhmG8IyDsWtDfEaDIn2232/3zbrvdxuFwwGg04qRBt+VnETBNE0IIkE2n07/erdfrWK/X6Ha73Hb9ZXII3G43ivy3dNRqtZe7lUoFs9mM6oBDwCQCgquALT1FT3a5XF7qIZ/PYzgcolqtcggIIgBZAgRKB6lCRalp2uM8k8mAVMrlchwC+DEBipycE4n5fP44j8ViKJVKSCaTbAJCpgaez4vFIsjoWa/XA50FAgEkEgmEw2F2CkxZBZ5Br5tt1ITcbjd8Ph88Hg+7CBefECCsVitS4aVJcV9D/VMCVITk/Hq9YrPZyBBo2a1YMGvAcQYcj0cCtWMugcdYNhjDiBrP25mx3++x3W6RzWZZ8isfxzQLlsslJpMJpYY5jhkqcOH1ejEYDDAej9FoNOByuZxGsfqVzC7KTqcDSkkqleKsZOqX0mAwiHK5DGrJfr+fs5SqX8sjkQji8ThCoRC+v78Za7l6JagrUh3YkUuZpqgwDaecc9VYSDoV5Fg+at7n+eLN57kuE/EvzHr/Kvs31aYAAAAASUVORK5CYII="
+            },
+            {
+                "name": "HTML",
+                "image": "https://www.w3.org/html/logo/badge/html5-badge-h-solo.png"
+            },
+            {
+                "name": "CSS",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1452px-CSS3_logo_and_wordmark.svg.png"
+            },
+            {
+                "name": "JavaScript",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/800px-JavaScript-logo.png"
+            },
+            {
+                "name": "Bootstrap",
+                "image": "https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow.png"
+            },
+            {
+                "name": "Material UI",
+                "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADgCAMAAAAt85rTAAAAh1BMVEWCgoL////l5eXk5OTm5ubu7u74+Pj19fXx8fH7+/vr6+t+fn52dnZ7e3t8fHzz8/OGhoaTk5Pa2tq3t7e7u7utra3Q0NCZmZnFxcWkpKSMjIzKysqpqanX19e/v7+dnZ1ra2tH/Sn9AAASPElEQVR4nOVdbZuyKhBWwTcErcxqa7fO//+VB9RKGF6tdvWc+bLPNY+m48DMzc0AURzHWYKTjP9FOEn5nzTBaKJNPLW5UYtxQozawqYtH1o8V4ui/4eFKEG9hcn4fgmaqU2S0ZaHNndpi0Fbjlr8Ni0atVGWZXmapjn/y/8U/E/B//6etnmnttFoI/4BemcgxUVBWuLS8iaES/6XENLwPw1vSpPPngzXPj67TYtDtIhrI6ztZm/pkuKZDbcpLgt0uV73+7b74tJ1bdterztUZDgl5Se6JJpoP+ZD/uNNnKNTdztHlFJWV7LUjCuj8609oIx/hfRzPvxI3yqanBzaIzeNGxbZpKq4pdG2PeBcdKKXepyhH747lgotut4iyuymKYYyGt1O6aRpvi+WvrXzYZKSXbehDscZrKxp1F1wms7sfNZ8iAa/oLGbIeSjJRrt9RjmO+hLtj31HkDD+6GhS6Kxm3losaKNAs0yG9uQ042+Yt1dano8lS+ahT6QLUjH2BvMG42sOxKTt2WLV8MLwqT42b7FfU+p6PYkUunrQSd6PUU0pK3e576nsKgl8euJQ84W4ck/IWj/UmyxScW+EQlO/gi9M1vkqPuYfYONXfGWbDHbh+1H7Rts3AdCNUX7Qj/M8lNUf9g+IXV0KssX+uH8WIo2n4gvOmFnFAjVprF0bj7Mvukv2SeEfudkbj6cBdUScnhz/nMJ745kHoCbh0uz2286cBB2K3NvqDbFpeHZAse/7cBBKnpKfZvmS1wbSY6/78BB2FGid/wAXPAYvznMGvy9R6rqEH+Ya0ua6185cBDaEm1eQO/i2vDxt3KgSdgRuUmA2Vwb2W3+roXepdqgIAAX0g/zw187cBB2yD/DtaXt33bBp/DO6IBqs0ZP6dcyPCiEfZXeAM4b0xTH3xhH+Aq72aHaFNP4RRqcnP8+xkylOqO3ZguMFhBEZRlCqgmqhXJtJdr8tUE6yd/GtZVkaQ4cJS0n75tqE0fqw7VhtFADo2j3Fq4NL7OJ9rJ5Ml5hMvWWljbc8CkjhUZy3w7v6D9uxGA1Xos7Zpd0D7OYPD+tPH8p+fuRF83tFgg13XYuzsvK07GyK8ueAaAAgB9NfYQ+Eq4BjZFuJ4LgO4wD38MLWAr9EsATSBgx+TfNgTY7Ak4LZIg0kHkpIIt02Zxt1v3gCO79IXKz3RvAB9BEhfrWZHvEoN5ReU04g3g1hjHDNSuUAT7AASmFAAAAABJRU5ErkJggg=="
+            }
+        ]
+    },
+    {
+        "title": "Backend",
+        "skills": [
+            {
+                "name": "Node Js",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"
+            },
+            {
+                "name": "MongoDB",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg"
+            },
+            {
+                "name": "SQL",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png"
+            },
+            {
+                "name": "Postman",
+                "image": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
+            }
+        ]
+    },
+    {
+        "title": "Android",
+        "skills": [
+            {
+                "name": "Android Studio",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Android_Studio_icon.svg"
+            },
+            {
+                "name": "Java",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Java_logo_and_wordmark.svg"
+            },
+            {
+                "name": "Kotlin",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Kotlin-logo.svg"
+            },
+            {
+                "name": "XML",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/0/0f/XML_logo.svg"
+            }
+        ]
+    },
+    {
+        "title": "Others",
+        "skills": [
+            {
+                "name": "Git",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg"
+            },
+            {
+                "name": "Docker",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/Docker-Logo.svg"
+            },
+            {
+                "name": "GraphQL",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/GraphQL_Logo.svg"
+            },
+            {
+                "name": "Figma",
+                "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Figma-logo.svg"
+            }
+        ]
+    }
+]

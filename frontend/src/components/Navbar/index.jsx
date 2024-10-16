@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
-import { Bio } from '../../data/constants';
+import { Bio } from '../../db/constants.jsx';
 import { Link, NavLink } from "react-router-dom";
 import NavLinkDrp from './NavLinksDrp.jsx';
 import { useTranslation } from "react-i18next"

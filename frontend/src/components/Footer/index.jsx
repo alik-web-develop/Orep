@@ -3,7 +3,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { Bio } from '../../data/constants.jsx';
+import { Bio } from '../../db/constants.jsx';
 import styles from './Footer.module.scss';
 
 function Footer() {

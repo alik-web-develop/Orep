@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import './style.scss';
 import ProjectCard from '../Cards/ProjectCard/ProjectCards.jsx';
-import { projects } from '../../data/constants';
+import { projects } from '../../db/constants.jsx';
 
 const Projects = ({ openModal, setOpenModal }) => {
     const [toggle, setToggle] = useState('all');
