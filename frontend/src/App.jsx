@@ -50,7 +50,7 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router >
         <context.Provider value={{ state, dispatch }}>
-        <Navbar />
+          <Navbar />
           <Body>
             <HeroSection />
             <Wrapper>
@@ -59,9 +59,11 @@ function App() {
               </AnimatedComponent>
               <Experience />
             </Wrapper>
-            <AnimatedComponent>
-              <Projects />
-            </AnimatedComponent>
+            <Wrapper>
+              <AnimatedComponent>
+                <Projects />
+              </AnimatedComponent>
+            </Wrapper>
             <Wrapper>
               <AnimatedComponent>
                 <Education />
