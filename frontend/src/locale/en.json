@@ -27,6 +27,25 @@
         "experience": {
             "title": "Experience",
             "description": "My work experience as a software engineer and working on different companies and projects."
+        },
+        "projects": {
+            "title": "Projects",
+            "description": "We have worked on a wide range of projects. From web apps to Android apps. Here are some of my projects."
+        },
+        "education": {
+            "title": "Education",
+            "description": "Our education was a path of self-discovery and growth. The details of our education are as follows."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Feel free to contact us with any questions or suggestions!",
+            "emailMe": "Email me",
+            "name": "Your Name",
+            "email": "Your Email",
+            "subject": "Subject",
+            "message": "Message",
+            "send": "Send",
+            "messageSent": "Your message has been sent successfully!"
         }
     }
 }

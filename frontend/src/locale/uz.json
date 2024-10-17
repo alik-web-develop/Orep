@@ -27,6 +27,25 @@
         "experience": {
             "title": "Tajriba",
             "description": "Bizning ishlab chiqarish tajribamiz va barcha ishlagan kompaniyalar va proyektlarimiz."
+        },
+        "projects": {
+            "title": "Проекты",
+            "description": "Biz keng ko'lamli loyihalar ustida ishlaganmiz. Veb-ilovalardan Android ilovalarigacha. Bu yerda bizning ba'zi loyihalarimiz."
+        },
+        "education": {
+            "title": "Ta'lim",
+            "description": "Bizning ta'limimiz o'zimizni kashf qilish va o'sish yo'li edi. Bizning ta'limimizning tafsilotlari quyidagicha."
+        },
+        "contact": {
+            "title": "Biz bilan bog'lanish",
+            "description": "Har qanday savol va takliflar bilan biz bilan bog'laning!",
+            "emailMe": "Bizga elektron pochta xabarini yuboring",
+            "name": "Sizning ismingiz",
+            "email": "Sizning elektron pochtangiz",
+            "subject": "Sarlavha",
+            "message": "Xabar",
+            "send": "Yuborish",
+            "messageSent": "Xabaringiz muvaffaqiyatli yuborildi!"
         }
     }
 }

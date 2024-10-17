@@ -5,19 +5,23 @@ import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
-import  education from '../../db/Education.json';
-import  experiences from '../../db/Expiriences.json';
+import education from '../../db/Education.json';
+import experiences from '../../db/Expiriences.json';
 import EducationCard from '../Cards/EducationCard/EducationCard.jsx';
 import styles from './Education.module.scss';
 import AnimatedComponent from '../AnimationComp/index.jsx';
+import { useTranslation } from "react-i18next"
 
-const EducationSection = () => {
+function EducationSection() {
+
+    const { t, i18n: { changeLanguage } } = useTranslation();
+
     return (
         <div className={styles.container} id="education">
             <div className={styles.wrapper}>
-                <div className={styles.title}>Education</div>
+                <div className={styles.title}>{t("education.title")}</div>
                 <div className={styles.desc}>
-                    My education has been a journey of self-discovery and growth. My educational details are as follows.
+                    {t("education.description")}
                 </div>
                 <div className={styles.timelineSection}>
                     <Timeline>

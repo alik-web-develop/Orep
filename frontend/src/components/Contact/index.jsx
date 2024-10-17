@@ -2,8 +2,11 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
 import styles from './Contact.module.scss';
+import { useTranslation } from "react-i18next"
 
-const Contact = () => {
+function Contact() {
+
+  const { t, i18n: { changeLanguage } } = useTranslation();
   const [open, setOpen] = useState(false);
   const form = useRef();
 
@@ -21,21 +24,21 @@ const Contact = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.title}>Contact</div>
-        <div className={styles.desc}>Feel free to reach out to me for any questions or opportunities!</div>
+        <div className={styles.title}>{t("contact.title")}</div>
+        <div className={styles.desc}>{t("contact.description")}</div>
         <form ref={form} onSubmit={handleSubmit} className={styles.contactForm}>
-          <div className={styles.contactTitle}>Email Me 🚀</div>
-          <input className={styles.contactInput} placeholder="Your Email" name="from_email" />
-          <input className={styles.contactInput} placeholder="Your Name" name="from_name" />
-          <input className={styles.contactInput} placeholder="Subject" name="subject" />
-          <textarea className={styles.contactInputMessage} placeholder="Message" rows="4" name="message" />
-          <input type="submit" value="Send" className={styles.contactButton} />
+          <div className={styles.contactTitle}>{t("contact.emailMe")}</div>
+          <input className={styles.contactInput} placeholder={t("contact.email")} name="from_email" />
+          <input className={styles.contactInput} placeholder={t("contact.name")} name="from_name" />
+          <input className={styles.contactInput} placeholder={t("contact.subject")} name="subject" />
+          <textarea className={styles.contactInputMessage} placeholder={t("contact.message")} rows="4" name="message" />
+          <input type="submit" value={t("contact.send")} className={styles.contactButton} />
         </form>
         <Snackbar
           open={open}
-          autoHideDuration={6000}
+          autoHideDuration={5000}
           onClose={() => setOpen(false)}
-          message="Email sent successfully!"
+          message={t("contact.messageSent")}
           severity="success"
         />
       </div>
