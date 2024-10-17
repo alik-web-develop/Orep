@@ -18,32 +18,33 @@
         cursor: pointer;
         color: white;
 
+        a {
+            font-weight: 900;
+            
+        }
         .drp-content {
             max-width: 180px;
             position: absolute;
-            box-shadow: 2px 2px 8px hsla(271, 100%, 50%, 1),
-            -2px -2px 8px hsla(271, 100%, 50%, 1),
-            2px -2px 8px hsla(271, 100%, 50%, 1),
-            -2px 2px 8px hsla(271, 100%, 50%, 1);
-            top:25px;
-            left: 0px;
+            box-shadow: 2px 0.1px 8px hsla(271, 100%, 50%, 1),
+                -2px 0.1px 8px hsla(271, 100%, 50%, 1),
+                2px 0.1px 8px hsla(271, 100%, 50%, 1),
+                -2px 0.1px 8px hsla(271, 100%, 50%, 1);
+            top: 23px;
+            left: -10px;
             display: none;
-
-            a {
-                color: red;
-            }
+            
             p {
                 padding: 10px 20px;
                 background-color: #191924;
                 color: white;
-                font-weight: normal;
                 font-family: sans-serif;
-
+                
+                
                 &:hover {
                     background-color: #28283b;
                     color: white;
                 }
-
+                
                 &.active {
                     background-color: #28283b;
                     color: white;
@@ -102,6 +103,7 @@
         list-style: none;
         color: white;
         text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
+        text-align: center;
 
         @media screen and (max-width: 768px) {
             display: none;
@@ -127,7 +129,7 @@
             }
         }
     }
-
+    
     &__button-container {
         width: 80%;
         height: 100%;
@@ -135,14 +137,12 @@
         justify-content: end;
         align-items: center;
         padding: 0 6px;
-
         @media screen and (max-width: 768px) {
             display: none;
         }
     }
 
     &__github-button {
-        border: 1.8px solid white; // Измените на ваши переменные темы
         display: flex;
         align-items: center;
         height: 70%;
@@ -156,7 +156,7 @@
         color: white;
         text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
         transition: 0.3s ease;
-
+        width: auto;
         &:hover {
             scale: 0.9;
             cursor: pointer;
@@ -168,6 +168,7 @@
         }
     }
 
+
     .navbar__github-button {
         background-color: transparent;
         padding: 10px 25px;
@@ -176,7 +177,9 @@
         // color: $light;
         cursor: pointer;
         transition: 0.3s;
-
+        display: flex;
+        align-items: center;
+        justify-content: center;
         &:hover {
             box-shadow: 2px 2px 8px hsla(271, 100%, 50%, 1),
                 -2px -2px 8px hsla(271, 100%, 50%, 1),
@@ -274,7 +277,7 @@
         right: 0;
         width: 100%;
         padding: 12px 40px 24px 40px;
-        background: #333; // Измените на ваши переменные темы
+        background: rgb(25, 25, 36);
         transition: all 0.6s ease-in-out;
         border-radius: 0 0 20px 20px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -291,7 +294,7 @@
 
         &:hover {
             scale: 0.9;
-            cursor: pointer; // Измените на ваши переменные темы
+            cursor: pointer;
         }
     }
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
-import  Bio  from '../../db/Bio.json';
+import Bio from '../../db/Bio.json';
 import { Link, NavLink } from "react-router-dom";
 import NavLinkDrp from './NavLinksDrp.jsx';
 import { useTranslation } from "react-i18next"
@@ -51,11 +51,13 @@ function Navbar(props) {
         </div>
         {isOpen && (
           <div className="navbar__mobile-menu">
-            <a className="navbar__mobile-link" href="#about" onClick={() => setIsOpen(false)}>About</a>
-            <a className="navbar__mobile-link" href='#skills' onClick={() => setIsOpen(false)}>Skills</a>
-            <a className="navbar__mobile-link" href='#experience' onClick={() => setIsOpen(false)}>Experience</a>
-            <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>Projects</a>
-            <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>Education</a>
+            <a className="navbar__mobile-link" href="#about" onClick={() => setIsOpen(false)}>{t('navigation.about')}</a>
+            <a className="navbar__mobile-link" href='#skills' onClick={() => setIsOpen(false)}>{t('navigation.skills')}</a>
+            <a className="navbar__mobile-link" href='#experience' onClick={() => setIsOpen(false)}>{t('navigation.experience')}</a>
+            <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>{t('navigation.projects')}</a>
+            <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>{t('navigation.education')}</a>
+            <NavLinkDrp items={state.languages} activateFn={activateLang} />
+            <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
           </div>
         )}
       </div>
@@ -63,11 +65,11 @@ function Navbar(props) {
       {isModalOpen && (
         <div className="modal">
           <div className="modal-content">
-            <h2>GitHub Profiles</h2>
-            <h5>Creators:</h5>
+            <h2>{t('navigation.githubProfiles')}</h2>
+            <h5>{t('navigation.githubCreators')}</h5>
             <div>
-              <a href={Bio.Bio[0].github_mal4ik} target="_blank" rel="noopener noreferrer">First Creator</a><br />
-              <a href={Bio.Bio[0].github_bulyon} target="_blank" rel="noopener noreferrer">Second Creator</a>
+              <a href={Bio.Bio[0].github_mal4ik} target="_blank" rel="noopener noreferrer">{t('navigation.githubFirst')}</a><br />
+              <a href={Bio.Bio[0].github_bulyon} target="_blank" rel="noopener noreferrer">{t('navigation.githubSecond')}</a>
               <button onClick={closeModal} className="modal-close"> <span>&times;</span> </button>
             </div>
           </div>

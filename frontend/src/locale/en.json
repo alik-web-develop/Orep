@@ -7,7 +7,11 @@
             "projects": "Projects",
             "experience": "Experience",
             "education": "Education",
-            "github": "Github Profile"
+            "github": "Github Profile",
+            "githubFirst": "First Creator",
+            "githubSecond": "Second Creator",
+            "githubProfiles": "Github Profiles",
+            "githubCreators": "Creators:"
         },
         "hero": {
             "hello": "Hello, we are",

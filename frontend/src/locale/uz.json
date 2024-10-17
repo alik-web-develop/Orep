@@ -7,7 +7,11 @@
             "projects": "Xizmatlar",
             "experience": "Tajriba",
             "education": "Ta'lim",
-            "github": "Github Profil"
+            "github": "Github Profil",
+            "githubFirst": "Birinchi yaratuvchi",
+            "githubSecond": "Ikkinchi yaratuvchi",
+            "githubProfiles": "Github Profillar",
+            "githubCreators": "Yaratuvchilar:"
         },
         "hero": {
             "hello": "Salom, biz",

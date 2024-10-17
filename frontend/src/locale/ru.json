@@ -7,7 +7,11 @@
             "projects": "Проекты",
             "experience": "Опыт",
             "education": "Образование",
-            "github": "Github Профиль"
+            "github": "Github Профиль",
+            "githubFirst": "Первый создатель",
+            "githubSecond": "Второй создатель",
+            "githubProfiles": "Github Профили",
+            "githubCreators": "Создатели:"
         },
         "hero": {
             "hello": "Здравствуйте, мы",
