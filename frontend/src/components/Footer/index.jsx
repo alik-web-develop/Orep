@@ -19,16 +19,16 @@ function Footer() {
           <a className={styles.navLink} href="#education">Education</a>
         </nav>
         <div className={styles.socialMediaIcons}>
-          <a className={styles.socialMediaIcon} href={Bio.facebook} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialMediaIcon} href={Bio.Bio[0].facebook} target="_blank" rel="noopener noreferrer">
             <FacebookIcon />
           </a>
-          <a className={styles.socialMediaIcon} href={Bio.twitter} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialMediaIcon} href={Bio.Bio[0].twitter} target="_blank" rel="noopener noreferrer">
             <TwitterIcon />
           </a>
-          <a className={styles.socialMediaIcon} href={Bio.linkedin} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialMediaIcon} href={Bio.Bio[0].linkedin} target="_blank" rel="noopener noreferrer">
             <LinkedInIcon />
           </a>
-          <a className={styles.socialMediaIcon} href={Bio.insta} target="_blank" rel="noopener noreferrer">
+          <a className={styles.socialMediaIcon} href={Bio.Bio[0].insta} target="_blank" rel="noopener noreferrer">
             <InstagramIcon />
           </a>
         </div>

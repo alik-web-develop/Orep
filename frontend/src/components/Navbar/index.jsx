@@ -66,8 +66,8 @@ function Navbar(props) {
             <h2>GitHub Profiles</h2>
             <h5>Creators:</h5>
             <div>
-              <a href={Bio.github_mal4ik} target="_blank" rel="noopener noreferrer">First Creator</a><br />
-              <a href={Bio.github_bulyon} target="_blank" rel="noopener noreferrer">Second Creator</a>
+              <a href={Bio.Bio[0].github_mal4ik} target="_blank" rel="noopener noreferrer">First Creator</a><br />
+              <a href={Bio.Bio[0].github_bulyon} target="_blank" rel="noopener noreferrer">Second Creator</a>
               <button onClick={closeModal} className="modal-close"> <span>&times;</span> </button>
             </div>
           </div>
