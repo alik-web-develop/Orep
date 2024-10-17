@@ -3,7 +3,7 @@ import HeroBgAnimation from '../HeroBgAnimation';
 import './HeroSection.scss'; // Импорт стилей
 import Logo from '../../images/logo.jpg';
 import Typewriter from 'typewriter-effect';
-import Bio from "../../db.json";
+import Bio from "../../db/Bio.json";
 import AnimatedComponent from '../AnimationComp';
 import { context } from "../../store"
 import { useState, useEffect, useContext } from 'react';

@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss'; // Импортируем стили
-import { skills } from '../../db/constants';
+import  skills  from '../../db/Skills.json';
 import { context } from "../../store"
 import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from "react-i18next"
