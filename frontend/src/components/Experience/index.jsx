@@ -6,16 +6,18 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import ExperienceCard from '../Cards/ExperienceCard/ExperienceCard.jsx';
-import experiences  from '../../db/Expiriences.json';
+import experiences from '../../db/Expiriences.json';
 import AnimatedComponent from '../AnimationComp/index.jsx';
 import styles from './Experience.module.scss';
 import { useTranslation } from "react-i18next"
+import BgAnimation from '../bg_anim/BgAnimation.jsx'
 
 function Experience() {
     const { t, i18n: { changeLanguage } } = useTranslation();
 
     return (
         <div className={styles.container} id="experience">
+            <BgAnimation />
             <div className={styles.wrapper}>
                 <div className={styles.title}>{t("experience.title")}</div>
                 <div className={styles.desc}>

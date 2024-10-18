@@ -11,6 +11,7 @@ import EducationCard from '../Cards/EducationCard/EducationCard.jsx';
 import styles from './Education.module.scss';
 import AnimatedComponent from '../AnimationComp/index.jsx';
 import { useTranslation } from "react-i18next"
+import BgAnimation from '../bg_anim/BgAnimation.jsx'
 
 function EducationSection() {
 
@@ -18,6 +19,7 @@ function EducationSection() {
 
     return (
         <div className={styles.container} id="education">
+            <BgAnimation />
             <div className={styles.wrapper}>
                 <div className={styles.title}>{t("education.title")}</div>
                 <div className={styles.desc}>

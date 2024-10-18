@@ -8,6 +8,7 @@ import AnimatedComponent from '../AnimationComp';
 import { context } from "../../store"
 import { useState, useEffect, useContext } from 'react';
 import { useTranslation } from "react-i18next"
+import bgAnim from '../bg_anim/BgAnimation.jsx'
 
 
 function HeroSection() {
@@ -19,7 +20,7 @@ function HeroSection() {
   return (
 
     <div id="about" className="hero-container">
-
+      <bgAnim />
       <div className="hero-bg">
         <HeroBgAnimation />
       </div>

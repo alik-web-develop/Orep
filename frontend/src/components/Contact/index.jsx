@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
 import styles from './Contact.module.scss';
 import { useTranslation } from "react-i18next"
+import BgAnim from '../bg_anim/BgAnimation';
 
 function Contact() {
 
@@ -23,6 +24,7 @@ function Contact() {
 
   return (
     <div className={styles.container}>
+      <BgAnim/>
       <div className={styles.wrapper}>
         <div className={styles.title}>{t("contact.title")}</div>
         <div className={styles.desc}>{t("contact.description")}</div>

@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { useState, useEffect, useContext, useReducer } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.jsx'
 import Navbar from "./components/Navbar/index.jsx";
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HeroSection from "./components/HeroSection/index.jsx";
 import About from "./components/About/index.jsx";
@@ -17,6 +17,7 @@ import styled from "styled-components";
 import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
+
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
