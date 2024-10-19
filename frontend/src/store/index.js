@@ -8,7 +8,8 @@ const initialState = {
         { code: "en", active: true },
         { code: "ru", active: false },
         { code: "uz", active: false }
-    ]
+    ],
+    basket:[]
 }
 
 export {

@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
+import { PiShoppingCart, PiShoppingCartFill } from "react-icons/pi";
 import Bio from '../../db/Bio.json';
 import { NavLink } from "react-router-dom";
 import NavLinkDrp from './NavLinksDrp.jsx';
@@ -47,6 +48,7 @@ function Navbar(props) {
           <li className="navbar__item"><a href='#education'>{t('navigation.education')}</a></li>
           <li className="navbar__item"><NavLink to="/courses">{t('navigation.courses')}</NavLink></li>
           <NavLinkDrp items={state.languages} activateFn={activateLang} />
+          <PiShoppingCart />
         </ul>
         <div className="navbar__button-container">
           <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
@@ -58,8 +60,10 @@ function Navbar(props) {
             <a className="navbar__mobile-link" href='#experience' onClick={() => setIsOpen(false)}>{t('navigation.experience')}</a>
             <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>{t('navigation.projects')}</a>
             <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>{t('navigation.education')}</a>
+            <NavLink to="/courses" onClick={() => setIsOpen(false)}>{t('navigation.courses')}</NavLink>
             <NavLinkDrp items={state.languages} activateFn={activateLang} />
             <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
+            <PiShoppingCart />
           </div>
         )}
       </div>

@@ -6,6 +6,17 @@ function globalReducer(state, action) {
                 return lang
             })
             return { ...state, languages: updatedLanguages }
+        case "ADD_TO_BASKET":
+            return { ...state, basket: [...state.basket, action.payload] }
+        case "REMOVE_FROM_BASKET":
+            return {
+                ...state,
+                basket: state.basket.filter(item => item.id !== action.payload)
+            }
+        case "inc":
+            return { ...state, basket: action.payload }
+        case "dec":
+            return { ...state, basket: action.payload }
         default:
             return state;
     }
