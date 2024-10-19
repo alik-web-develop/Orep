@@ -1,8 +1,8 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 import Bio from '../../db/Bio.json';
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavLinkDrp from './NavLinksDrp.jsx';
 import { useTranslation } from "react-i18next"
 import './style.scss';
@@ -13,11 +13,13 @@ function Navbar(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t, i18n: { changeLanguage } } = useTranslation();
 
-  const { state, dispatch } = useContext(context)
+  const { state, dispatch } = useContext(context);
+  
   function activateLang(language) {
     dispatch({ type: "SET_LANG", payload: language.code })
     changeLanguage(language.code)
   }
+  
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -26,24 +28,25 @@ function Navbar(props) {
     setIsModalOpen(false);
   };
 
-
   return (
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__logo">
-          <a className="navbar__logo-link" href="/">
+          <NavLink to="/" className="navbar__logo-link">
             <DiCssdeck size="3rem" /> <span className="navbar__span">FullFusion</span>
-          </a>
+          </NavLink>
         </div>
         <div className="navbar__mobile-icon">
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </div>
         <ul className="navbar__items">
+          <li className="navbar__item"><NavLink to="/">{t('navigation.home')}</NavLink></li>
           <li className="navbar__item"><a href="#about">{t('navigation.about')}</a></li>
           <li className="navbar__item"><a href='#skills'>{t('navigation.skills')}</a></li>
           <li className="navbar__item"><a href='#experience'>{t('navigation.experience')}</a></li>
           <li className="navbar__item"><a href='#projects'>{t('navigation.projects')}</a></li>
           <li className="navbar__item"><a href='#education'>{t('navigation.education')}</a></li>
+          <li className="navbar__item"><NavLink to="/courses">{t('navigation.courses')}</NavLink></li>
           <NavLinkDrp items={state.languages} activateFn={activateLang} />
         </ul>
         <div className="navbar__button-container">

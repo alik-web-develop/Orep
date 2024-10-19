@@ -33,7 +33,7 @@ function Contact() {
           <input className={styles.contactInput} placeholder={t("contact.email")} name="from_email" />
           <input className={styles.contactInput} placeholder={t("contact.name")} name="from_name" />
           <input className={styles.contactInput} placeholder={t("contact.subject")} name="subject" />
-          <textarea className={styles.contactInputMessage} placeholder={t("contact.message")} rows="4" name="message" />
+          <textarea className={styles.contactInputMessage} placeholder={t("contact.message")} rows="4" columns="50" name="message"/>
           <input type="submit" value={t("contact.send")} className={styles.contactButton} />
         </form>
         <Snackbar

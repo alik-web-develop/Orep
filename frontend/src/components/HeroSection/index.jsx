@@ -41,7 +41,7 @@ function HeroSection() {
               </span>
             </div>
             <div className="hero-subtitle">{t("hero.description")}</div>
-            <a href="#" target='_blank' rel='noopener noreferrer' className="hero-resume-button">{t("hero.resume")}</a>
+            <a href={bioData.resume} target='_blank' rel='noopener noreferrer' className="hero-resume-button">{t("hero.resume")}</a>
           </div>
           <div className="hero-right-container">
             <img src={Logo} alt="hero" className="hero-img" />

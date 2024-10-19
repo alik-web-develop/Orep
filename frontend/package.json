@@ -28,7 +28,7 @@
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.3",
     "react-icons": "^4.3.1",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.27.0",
     "react-scroll": "^1.8.7",
     "sass": "^1.79.5",
     "styled-components": "^5.3.5",

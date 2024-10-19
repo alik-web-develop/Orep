@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "title": "HTML",
+        "desc": "HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the meaning and structure of web content. Other technologies besides HTML are generally used to describe a web page's appearance/presentation (CSS) or functionality/behavior (JavaScript).",
+        "price": "$32",
+        "img": "https://timeweb.com/media/bff61f5eb160ec40661943751b6b88dd.png"
+    },
+    {
+        "id": 1,
+        "title": "CSS",
+        "desc": "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.",
+        "price": "$39",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhWRRvlDxm7CW-zqNEEunmAG6ZN0hx2wtWhQ&s"
+    },
+    {
+        "id": 2,
+        "title": "JavaScript",
+        "desc": "JavaScript is a scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else. (Okay, not everything, but it is amazing what you can achieve with a few lines of JavaScript code.)",
+        "price": "$67",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+    },
+    {
+        "id": 3,
+        "title": "React",
+        "desc": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on components by Facebook Inc. It is maintained by Meta (formerly Facebook) and a community of individual developers and companies.",
+        "price": "$69",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0c6a8m-Dr93Lf1zVkHq6zZoHdLun4eNO1pw&s"
+    }
+]
