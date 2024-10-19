@@ -26,9 +26,9 @@
         padding: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; // Выравнивание элементов
-        min-height: 350px; // Фиксированная минимальная высота
-        max-height: 450px; // Ограничение по максимальной высоте
+        justify-content: space-between;
+        min-height: 350px;
+        max-height: 450px;
         text-align: left;
 
         &:hover {
@@ -38,7 +38,7 @@
 
         .img-wrapper {
             width: 100%;
-            height: 550px; // Фиксируем высоту изображения
+            height: 550px;
             overflow: hidden;
 
             img {
@@ -61,14 +61,14 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
-            -webkit-line-clamp: 3; // Обрезаем текст до 3 строк
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
-            max-height: 4.2em; // Для трёх строк
+            max-height: 4.2em;
             transition: max-height 0.3s ease;
 
             &.show-full {
-                -webkit-line-clamp: unset; // Отменяем обрезку текста
-                max-height: none; // Показываем весь текст
+                -webkit-line-clamp: unset;
+                max-height: none;
             }
         }
 
