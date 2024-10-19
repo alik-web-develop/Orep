@@ -14,12 +14,12 @@ function Navbar(props) {
   const { t, i18n: { changeLanguage } } = useTranslation();
 
   const { state, dispatch } = useContext(context);
-  
+
   function activateLang(language) {
     dispatch({ type: "SET_LANG", payload: language.code })
     changeLanguage(language.code)
   }
-  
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -40,7 +40,6 @@ function Navbar(props) {
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </div>
         <ul className="navbar__items">
-          <li className="navbar__item"><NavLink to="/">{t('navigation.home')}</NavLink></li>
           <li className="navbar__item"><a href="#about">{t('navigation.about')}</a></li>
           <li className="navbar__item"><a href='#skills'>{t('navigation.skills')}</a></li>
           <li className="navbar__item"><a href='#experience'>{t('navigation.experience')}</a></li>
