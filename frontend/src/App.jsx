@@ -16,7 +16,6 @@ import Courses from "./components/Courses";
 import Basket from "./components/Basket";
 import ProjectDetails from "./components/ProjectDetails/index.jsx";
 import styled from "styled-components";
-import Test from "./components/Test";
 import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
@@ -93,7 +92,6 @@ function App() {
                     </AnimatedComponent>
                     <AnimatedComponent>
                       <Contact />
-                      <Test />
                     </AnimatedComponent>
                   </Wrapper>
                   <Footer />
