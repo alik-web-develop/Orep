@@ -83,23 +83,24 @@ function App() {
                     <Experience />
                   </Wrapper>
                   <Wrapper>
-                    <AnimatedComponent>
-                      <Projects />
-                    </AnimatedComponent>
-                  </Wrapper>
-                  <Wrapper>
+                    <Wrapper>
                     <AnimatedComponent>
                       <Education />
                     </AnimatedComponent>
+                    </Wrapper>
+                    <Wrapper>
+                      <AnimatedComponent>
+                        <Projects />
+                      </AnimatedComponent>
+                    </Wrapper>
                     <AnimatedComponent>
                       <Contact />
-                      <Test />
                     </AnimatedComponent>
                   </Wrapper>
                   <Footer />
                 </>
               } />
-              
+
               <Route path="/project/:id" element={<ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />} />
               <Route path="/courses" element={<Courses />} />
               <Route path="/basket" element={<Basket />} />
