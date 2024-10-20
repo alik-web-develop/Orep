@@ -14,11 +14,14 @@ import Footer from "./components/Footer/index.jsx";
 import Experience from "./components/Experience/index.jsx";
 import Education from "./components/Education/index.jsx";
 import Courses from "./components/Courses";
+import Basket from "./components/Basket";
 import ProjectDetails from "./components/ProjectDetails/index.jsx";
 import styled from "styled-components";
+import Test from "./components/Test";
 import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
+
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -76,6 +79,7 @@ function App() {
                     </AnimatedComponent>
                     <AnimatedComponent>
                       <Contact />
+                      <Test />
                     </AnimatedComponent>
                   </Wrapper>
                   <Footer />
@@ -85,6 +89,8 @@ function App() {
               <Route path="/project/:id" element={<ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />} />
 
               <Route path="/courses" element={<Courses />} />
+              <Route path="/basket" element={<Basket/>} />
+
             </Routes>
 
             {openModal.state && (

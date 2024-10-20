@@ -47,8 +47,8 @@ function Navbar(props) {
           <li className="navbar__item"><a href='#projects'>{t('navigation.projects')}</a></li>
           <li className="navbar__item"><a href='#education'>{t('navigation.education')}</a></li>
           <li className="navbar__item"><NavLink to="/courses">{t('navigation.courses')}</NavLink></li>
+          <NavLink to="/basket" onClick={() => setIsOpen(false)}><PiShoppingCart /></NavLink>
           <NavLinkDrp items={state.languages} activateFn={activateLang} />
-          <PiShoppingCart />
         </ul>
         <div className="navbar__button-container">
           <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
@@ -61,9 +61,10 @@ function Navbar(props) {
             <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>{t('navigation.projects')}</a>
             <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>{t('navigation.education')}</a>
             <NavLink to="/courses" onClick={() => setIsOpen(false)}>{t('navigation.courses')}</NavLink>
+            <NavLink to="/basket" onClick={() => setIsOpen(false)}><PiShoppingCart /></NavLink>
             <NavLinkDrp items={state.languages} activateFn={activateLang} />
             <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
-            <PiShoppingCart />
+            
           </div>
         )}
       </div>

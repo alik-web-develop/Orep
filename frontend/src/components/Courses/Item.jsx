@@ -7,10 +7,7 @@ function Item(props) {
     const { state, dispatch } = useContext(context)
     const [showMore, setShowMore] = useState(false);
 
-    const toggleShowMore = () => {
-        console.log("Toggle show more clicked");
-        setShowMore(!showMore);
-    };
+
     function addToBasket(e) {
         e.stopPropagation()
 
@@ -41,12 +38,9 @@ function Item(props) {
                 <img src={props.img} alt={props.title} />
             </div>
             <h4>{props.title}</h4>
-            <p className={`desc ${showMore ? 'show-full' : ''}`}>
+            <p className="desc">
                 {props.desc}
             </p>
-            <span className="show-more" onClick={toggleShowMore}>
-                {showMore ? '...show less' : '...show more'}
-            </span>
             <p className="price">${props.price}</p>
         </div>
     )
