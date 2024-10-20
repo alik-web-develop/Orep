@@ -52,6 +52,20 @@
             "totalPrice": "Umumiy summa",
             "varietyItems": "Turli xil tovarlar",
             "totalItems" : "Mahsulotlarning umumiy soni"
+        },
+        "login": {
+            "signIn": "Tizimga kirish",
+            "signUp": "Roʻyxatdan oʻtish",
+            "login": "Tizimga kirish",
+            "register": "Roʻyxatdan oʻtish",
+            "name": "Ism",
+            "password": "Parol",
+            "passwordConf": "Parolingizni tasdiqlang",
+            "registerGreetings": "Salom, do'stim!",
+            "loginGreetings": "Xush kelibsiz!",
+            "registerDesc": "Shaxsiy ma'lumotlaringizni kiriting va biz bilan mashg'ulotni boshlang.", 
+            "loginDesc": "Biz bilan aloqada bo'lish uchun shaxsiy ma'lumotlaringiz bilan tizimga kiring..",
+            "forgotPass": "Parolingiz esdan chiqdimi?"
         }
     }
 }

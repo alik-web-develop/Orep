@@ -47,11 +47,25 @@
             "message": "Message",
             "send": "Send",
             "messageSent": "Your message has been sent successfully!"
-        }, 
+        },
         "basket": {
             "totalPrice": "In total",
             "varietyItems": "Variety of items",
-            "totalItems" : "Total items"
+            "totalItems": "Total items"
+        },
+        "login": {
+            "signIn": "Sign in",
+            "signUp": "Sign up",
+            "login": "Login",
+            "register": "Register",
+            "name": "Name",
+            "password": "Password",
+            "passwordConf": "Confirm Password",
+            "registerGreetings": "Hi, friend!",
+            "loginGreetings": "Welcome back!",
+            "registerDesc": "Enter your personal details and start learning with us.", 
+            "loginDesc": "To stay in touch with us, please sign in with your personal information.",
+            "forgotPass": "Forgot Password?"
         }
     }
 }

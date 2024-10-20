@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Toastify from "toastify-js";
-import "toastify-js/src/toastify.css";
 import './style.scss'
+import { useTranslation } from "react-i18next"
 
 const LoginForm = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -12,7 +11,7 @@ const LoginForm = () => {
   const [regName, setRegName] = useState("");
   const [regPass, setRegPass] = useState("");
   const [regPassConf, setRegPassConf] = useState("");
-
+  const { t, i18n: { changeLanguage } } = useTranslation();
   useEffect(() => {
     const handleWindowClick = (event) => {
       if (event.target.className === "modal") {
@@ -107,7 +106,7 @@ const LoginForm = () => {
   return (
     <div className="main_div_modal">
       <button className="connect_login" onClick={toggleModal}>
-        Login
+        {t("login.login")}
       </button>
 
       {isModalVisible && (
@@ -116,7 +115,7 @@ const LoginForm = () => {
             <div className={`container ${isRightPanelActive ? "right-panel-active" : ""}`} id="container">
               <div className="form-container sign-up-container">
                 <form onSubmit={registerFn}>
-                  <h1>Регистрация</h1>
+                  <h1>{t("login.signUp")}</h1>
                   <div className="social-container">
                     <a href="#" className="social">
                       <i className="fab fa-facebook-f"></i>
@@ -128,34 +127,34 @@ const LoginForm = () => {
                       <i className="fab fa-linkedin-in"></i>
                     </a>
                   </div>
-                  <span>или используйте свой эл. адрес для регистрации</span>
+                  <span>{t("login.registerDesc")}</span>
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder={t("login.name")}
                     value={regName}
                     onChange={(e) => setRegName(e.target.value)}
                   />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder={t("login.password")}
                     value={regPass}
                     onChange={(e) => setRegPass(e.target.value)}
                   />
                   <input
                     type="password"
-                    placeholder="Pass-Conf"
+                    placeholder={t("login.passwordConf")}
                     value={regPassConf}
                     onChange={(e) => setRegPassConf(e.target.value)}
                   />
                   <button className="signUpBtn" type="submit">
-                    Зарегистрироваться
+                    {t("login.register")}
                   </button>
                 </form>
               </div>
 
               <div className="form-container sign-in-container">
                 <form onSubmit={loginFn}>
-                  <h1>Войти</h1>
+                  <h1>{t("login.signIn")}</h1>
                   <div className="social-container">
                     <a href="#" className="social">
                       <i className="fab fa-facebook-f"></i>
@@ -170,19 +169,19 @@ const LoginForm = () => {
                   <span>или используйте свой аккаунт</span>
                   <input
                     type="text"
-                    placeholder="Name"
+                    placeholder={t("login.name")}
                     value={loginName}
                     onChange={(e) => setLoginName(e.target.value)}
                   />
                   <input
                     type="password"
-                    placeholder="Password"
+                    placeholder={t("login.password")}
                     value={loginPass}
                     onChange={(e) => setLoginPass(e.target.value)}
                   />
-                  <a href="#">Забыли пароль?</a>
+                  <a href="#">{t("login.forgotPass")}</a>
                   <button className="signInBtn" type="submit">
-                    Войти
+                    {t("login.login")}
                   </button>
                 </form>
               </div>
@@ -190,17 +189,17 @@ const LoginForm = () => {
               <div className="overlay-container">
                 <div className="overlay">
                   <div className="overlay-panel overlay-left" id="overlat_right">
-                    <h1>Добро пожаловать обратно!</h1>
-                    <p>Чтобы оставаться на связи с нами, пожалуйста, войдите под своей личной информацией</p>
+                    <h1>{t("login.loginGreetings")}</h1>
+                    <p>{t("login.loginDesc")}</p>
                     <button className="ghost" onClick={handleSignIn}>
-                      Войти
+                      {t("login.signIn")}
                     </button>
                   </div>
                   <div className="overlay-panel overlay-right" id="overlat_left">
-                    <h1>Привет, Друг!</h1>
-                    <p>Введите свои личные данные и начните путешествие с нами</p>
+                    <h1>{t("login.registerGreetings")}</h1>
+                    <p>{t("login.registerDesc")}</p>
                     <button className="ghost" onClick={handleSignUp}>
-                      Регистрация
+                      {t("login.signUp")}
                     </button>
                   </div>
                 </div>
