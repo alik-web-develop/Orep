@@ -4,10 +4,10 @@ import Item from "../Courses/Item.jsx";
 import { useContext } from "react";
 import { context } from "../../store";
 import CoursesJSON from "../../db/Courses.json";
-
+import { useTranslation } from "react-i18next"
 function Basket() {
     const { state, dispatch } = useContext(context);
-
+    const { t, i18n: { changeLanguage } } = useTranslation();
     function getAllIDs() {
         return state.basket.map(p => p.id);
     }
@@ -73,6 +73,7 @@ function Basket() {
                                             img={product.img}
                                             title={product.title}
                                             price={product.price}
+                                            iconClass={styles.customIconClass}  // Передаем кастомный класс
                                         />
                                     </div>
                                     <div className={styles.infoWrapper}>
@@ -92,9 +93,11 @@ function Basket() {
                 </div>
                 {getTotalPrice() > 0 && (
                     <div className={styles.pricesWrapper}>
-                        <h2>In total: <mark>${getTotalPrice()}</mark></h2>
-                        <h4>Variety of items: <mark>{getAllIDs().length}</mark></h4>
-                        <h4>Total items: <mark>{getTotalItems()}</mark></h4>
+                        <div className="right-total-price">
+                            <h2>{t("basket.totalPrice")}: <mark>${getTotalPrice()}</mark></h2>
+                            <h4>{t("basket.varietyItems")}: <mark>{getAllIDs().length}</mark></h4>
+                            <h4>{t("basket.totalItems")}: <mark>{getTotalItems()}</mark></h4>
+                        </div>
                     </div>
                 )}
             </div>

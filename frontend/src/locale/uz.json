@@ -47,6 +47,11 @@
             "message": "Xabar",
             "send": "Yuborish",
             "messageSent": "Xabaringiz muvaffaqiyatli yuborildi!"
+        }, 
+        "basket": {
+            "totalPrice": "Umumiy summa",
+            "varietyItems": "Turli xil tovarlar",
+            "totalItems" : "Mahsulotlarning umumiy soni"
         }
     }
 }

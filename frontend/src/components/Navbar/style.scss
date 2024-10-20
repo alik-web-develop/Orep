@@ -73,7 +73,7 @@
     &__logo {
         width: 80%;
         padding: 0 6px;
-
+        margin-top: 12px;
         &-link {
             display: flex;
             align-items: center;
@@ -104,6 +104,11 @@
         color: white;
         text-shadow: 2px 2px 80px rgba(112, 107, 107, 0.646);
         text-align: center;
+        
+        .navbar__basket {
+            color: white;
+            margin-top: 5px;
+        }
 
         @media screen and (max-width: 768px) {
             display: none;
@@ -163,7 +168,7 @@
 
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 968px) {
             font-size: 14px;
         }
     }

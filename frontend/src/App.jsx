@@ -1,10 +1,9 @@
-// App.jsx
 import { ThemeProvider } from "styled-components";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 import { darkTheme, lightTheme } from './utils/Themes.jsx';
 import Navbar from "./components/Navbar/index.jsx";
 import './App.scss';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HeroSection from "./components/HeroSection/index.jsx";
 import About from "./components/About/index.jsx";
 import Skills from "./components/Skills/index.jsx";
@@ -22,7 +21,6 @@ import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
 
-
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;
@@ -36,11 +34,25 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `;
 
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
+  return null;
+}
+
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  console.log(openModal);
-  
+
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
   const { t, i18n: { changeLanguage, language } } = useTranslation();
@@ -56,6 +68,7 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Router>
         <context.Provider value={{ state, dispatch }}>
+          <ScrollToHash />
           <Navbar />
           <Body>
             <Routes>
@@ -85,12 +98,10 @@ function App() {
                   <Footer />
                 </>
               } />
-
+              
               <Route path="/project/:id" element={<ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />} />
-
               <Route path="/courses" element={<Courses />} />
-              <Route path="/basket" element={<Basket/>} />
-
+              <Route path="/basket" element={<Basket />} />
             </Routes>
 
             {openModal.state && (
@@ -104,4 +115,3 @@ function App() {
 }
 
 export default App;
-

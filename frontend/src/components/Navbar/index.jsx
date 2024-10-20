@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
-import { PiShoppingCart, PiShoppingCartFill } from "react-icons/pi";
+import { PiShoppingCart } from "react-icons/pi";
 import Bio from '../../db/Bio.json';
 import { NavLink } from "react-router-dom";
 import NavLinkDrp from './NavLinksDrp.jsx';
@@ -41,13 +41,13 @@ function Navbar(props) {
           <FaBars onClick={() => setIsOpen(!isOpen)} />
         </div>
         <ul className="navbar__items">
-          <li className="navbar__item"><a href="#about">{t('navigation.about')}</a></li>
-          <li className="navbar__item"><a href='#skills'>{t('navigation.skills')}</a></li>
-          <li className="navbar__item"><a href='#experience'>{t('navigation.experience')}</a></li>
-          <li className="navbar__item"><a href='#projects'>{t('navigation.projects')}</a></li>
-          <li className="navbar__item"><a href='#education'>{t('navigation.education')}</a></li>
+          <li className="navbar__item"><NavLink to="/#about">{t('navigation.about')}</NavLink></li>
+          <li className="navbar__item"><NavLink to="/#skills">{t('navigation.skills')}</NavLink></li>
+          <li className="navbar__item"><NavLink to="/#experience">{t('navigation.experience')}</NavLink></li>
+          <li className="navbar__item"><NavLink to="/#projects">{t('navigation.projects')}</NavLink></li>
+          <li className="navbar__item"><NavLink to="/#education">{t('navigation.education')}</NavLink></li>
           <li className="navbar__item"><NavLink to="/courses">{t('navigation.courses')}</NavLink></li>
-          <NavLink to="/basket" onClick={() => setIsOpen(false)}><PiShoppingCart /></NavLink>
+          <NavLink to="/basket" onClick={() => setIsOpen(false)} className="navbar__basket"><PiShoppingCart /></NavLink>
           <NavLinkDrp items={state.languages} activateFn={activateLang} />
         </ul>
         <div className="navbar__button-container">
@@ -55,16 +55,15 @@ function Navbar(props) {
         </div>
         {isOpen && (
           <div className="navbar__mobile-menu">
-            <a className="navbar__mobile-link" href="#about" onClick={() => setIsOpen(false)}>{t('navigation.about')}</a>
-            <a className="navbar__mobile-link" href='#skills' onClick={() => setIsOpen(false)}>{t('navigation.skills')}</a>
-            <a className="navbar__mobile-link" href='#experience' onClick={() => setIsOpen(false)}>{t('navigation.experience')}</a>
-            <a className="navbar__mobile-link" href='#projects' onClick={() => setIsOpen(false)}>{t('navigation.projects')}</a>
-            <a className="navbar__mobile-link" href='#education' onClick={() => setIsOpen(false)}>{t('navigation.education')}</a>
+            <NavLink className="navbar__mobile-link" to="/#about" onClick={() => setIsOpen(false)}>{t('navigation.about')}</NavLink>
+            <NavLink className="navbar__mobile-link" to="/#skills" onClick={() => setIsOpen(false)}>{t('navigation.skills')}</NavLink>
+            <NavLink className="navbar__mobile-link" to="/#experience" onClick={() => setIsOpen(false)}>{t('navigation.experience')}</NavLink>
+            <NavLink className="navbar__mobile-link" to="/#projects" onClick={() => setIsOpen(false)}>{t('navigation.projects')}</NavLink>
+            <NavLink className="navbar__mobile-link" to="/#education" onClick={() => setIsOpen(false)}>{t('navigation.education')}</NavLink>
             <NavLink to="/courses" onClick={() => setIsOpen(false)}>{t('navigation.courses')}</NavLink>
             <NavLink to="/basket" onClick={() => setIsOpen(false)}><PiShoppingCart /></NavLink>
             <NavLinkDrp items={state.languages} activateFn={activateLang} />
             <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
-            
           </div>
         )}
       </div>

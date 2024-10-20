@@ -47,6 +47,11 @@
             "message": "Message",
             "send": "Send",
             "messageSent": "Your message has been sent successfully!"
+        }, 
+        "basket": {
+            "totalPrice": "In total",
+            "varietyItems": "Variety of items",
+            "totalItems" : "Total items"
         }
     }
 }
