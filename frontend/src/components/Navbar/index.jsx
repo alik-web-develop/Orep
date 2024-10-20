@@ -8,6 +8,7 @@ import NavLinkDrp from './NavLinksDrp.jsx';
 import { useTranslation } from "react-i18next"
 import './style.scss';
 import { context } from "../../store"
+import LoginForm from '../Authentication/index.jsx';
 
 function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,7 +52,7 @@ function Navbar(props) {
           <NavLinkDrp items={state.languages} activateFn={activateLang} />
         </ul>
         <div className="navbar__button-container">
-          <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
+          <LoginForm />
         </div>
         {isOpen && (
           <div className="navbar__mobile-menu">
@@ -63,7 +64,7 @@ function Navbar(props) {
             <NavLink to="/courses" onClick={() => setIsOpen(false)}>{t('navigation.courses')}</NavLink>
             <NavLink to="/basket" onClick={() => setIsOpen(false)}><PiShoppingCart /></NavLink>
             <NavLinkDrp items={state.languages} activateFn={activateLang} />
-            <button className="navbar__github-button" onClick={openModal}>{t('navigation.github')}</button>
+            <LoginForm />
           </div>
         )}
       </div>
