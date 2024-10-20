@@ -1,6 +1,7 @@
 import { createContext } from 'react'
 import { globalReducer } from './helpers'
 
+const BASE_URL = "http://localhost:3000/"
 const context = createContext()
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
 }
 
 export {
+    BASE_URL,
     context,
     initialState,
     globalReducer

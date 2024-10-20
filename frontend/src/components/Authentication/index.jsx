@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import './style.scss'
-import { useTranslation } from "react-i18next"
+import './style.scss';
+import Toastify from "toastify-js";
+import "toastify-js/src/toastify.css";
+import { useTranslation } from "react-i18next";
 
 const LoginForm = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -12,6 +14,7 @@ const LoginForm = () => {
   const [regPass, setRegPass] = useState("");
   const [regPassConf, setRegPassConf] = useState("");
   const { t, i18n: { changeLanguage } } = useTranslation();
+
   useEffect(() => {
     const handleWindowClick = (event) => {
       if (event.target.className === "modal") {
@@ -52,55 +55,69 @@ const LoginForm = () => {
     }).showToast();
   };
 
-  const getUsersFromLS = () => {
-    const allUsers = localStorage.getItem("users") || "[]";
-    return JSON.parse(allUsers);
-  };
-
-  const loginFn = (e) => {
-    e.preventDefault();
-    const users = getUsersFromLS();
-
-    const bool = users.find(
-      (user) => user.username === loginName && user.password === loginPass
-    );
-
-    if (bool) {
-      showAlert("Successfully logged in", "success");
-    } else {
-      showAlert("Incorrect credentials provided", "error");
-    }
-    setLoginName("");
-    setLoginPass("");
-  };
-
-  const registerFn = (e) => {
+  const registerFn = async (e) => {
     e.preventDefault();
 
     if (regName.length > 0 && regPass.length > 0) {
       if (regPass === regPassConf) {
-        const allUsers = getUsersFromLS();
-        const names = allUsers.map((user) => user.username);
+        try {
+          // Проверяем, существует ли пользователь
+          const response = await fetch("http://localhost:3000/users");
+          const users = await response.json();
+          const existingUser = users.find((user) => user.username === regName);
 
-        if (names.includes(regName)) {
-          showAlert("User under this username already exists", "error");
-          return;
+          if (existingUser) {
+            showAlert("User under this username already exists", "error");
+            return;
+          }
+
+          // Добавляем нового пользователя
+          const newUser = { username: regName, password: regPass };
+          await fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(newUser),
+          });
+
+          showAlert("Successfully created an account", "success");
+          setRegName("");
+          setRegPass("");
+          setRegPassConf("");
+        } catch (error) {
+          console.error("Error registering user:", error);
+          showAlert("Error registering user", "error");
         }
-
-        const newUser = { username: regName, password: regPass };
-        allUsers.push(newUser);
-        localStorage.setItem("users", JSON.stringify(allUsers));
-
-        showAlert("Successfully created an account", "success");
-        setRegName("");
-        setRegPass("");
-        setRegPassConf("");
       } else {
         showAlert("Passwords do not match", "error");
       }
     } else {
       showAlert("Please, fill in all fields", "error");
     }
+  };
+
+  const loginFn = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:3000/users");
+      const users = await response.json();
+
+      const user = users.find(
+        (user) => user.username === loginName && user.password === loginPass
+      );
+
+      if (user) {
+        showAlert("Successfully logged in", "success");
+      } else {
+        showAlert("Incorrect credentials provided", "error");
+      }
+    } catch (error) {
+      console.error("Error logging in:", error);
+      showAlert("Error logging in", "error");
+    }
+
+    setLoginName("");
+    setLoginPass("");
   };
 
   return (

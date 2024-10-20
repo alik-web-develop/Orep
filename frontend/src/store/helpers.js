@@ -22,6 +22,32 @@ function globalReducer(state, action) {
     }
 }
 
+function getFromLocalStorage(key, defaultValue = "[]") {
+    let items = localStorage.getItem(key) ?? defaultValue
+    return JSON.parse(items) // [...]
+}
+
+function addNewUserToLocalStorage(new_user) {
+    let existingUsers = getFromLocalStorage('users')
+
+    if (userExistsInDB(new_user)) {
+        return false
+    } else {
+        existingUsers.push(new_user)
+        localStorage.setItem('users', JSON.stringify(existingUsers))
+        return true
+    }
+}
+
+function userExistsInDB({ username, password }) {
+    let users = getFromLocalStorage('users')
+    for (let user of users) {
+        if (user.username == username && user.password == password) {
+            return true
+        }
+    }
+    return false
+}
 export {
     globalReducer
 }
