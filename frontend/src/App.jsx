@@ -5,23 +5,19 @@ import Navbar from "./components/Navbar/index.jsx";
 import './App.scss';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HeroSection from "./components/HeroSection/index.jsx";
-import About from "./components/About/index.jsx";
 import Skills from "./components/Skills/index.jsx";
 import Projects from "./components/Projects/index.jsx";
 import Contact from "./components/Contact/index.jsx";
-import Footer from "./components/Footer/index.jsx";
 import Experience from "./components/Experience/index.jsx";
 import Education from "./components/Education/index.jsx";
 import Courses from "./components/Courses";
 import Basket from "./components/Basket";
 import ProjectDetails from "./components/ProjectDetails/index.jsx";
 import styled from "styled-components";
-import Test from "./components/Test";
-import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
-import LoginForm from "./components/Authentication/index.jsx";
-import CreateProduct from "./components/CreateProduct/index.jsx";
+import Footer from "./components/Footer"; // Импорт Footer
+import Music from '../public/Music/music.mp3'; // Импорт музыки
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -64,7 +60,7 @@ function App() {
     const newLanguage = currentLanguage === "en" ? "ru" : "en";
     setCurrentLanguage(newLanguage);
     changeLanguage(newLanguage);
-  }
+  };
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -72,33 +68,21 @@ function App() {
         <context.Provider value={{ state, dispatch }}>
           <ScrollToHash />
           <Navbar />
+
           <Body>
             <Routes>
               <Route path="/" element={
                 <>
                   <HeroSection />
                   <Wrapper>
-                    <AnimatedComponent>
-                      <Skills />
-                    </AnimatedComponent>
+                    <Skills />
                     <Experience />
                   </Wrapper>
                   <Wrapper>
-                    <Wrapper>
-                    <AnimatedComponent>
-                      <Education />
-                    </AnimatedComponent>
-                    </Wrapper>
-                    <Wrapper>
-                      <AnimatedComponent>
-                        <Projects />
-                      </AnimatedComponent>
-                    </Wrapper>
-                    <AnimatedComponent>
-                      <Contact />
-                    </AnimatedComponent>
+                    <Education />
+                    <Projects />
+                    <Contact />
                   </Wrapper>
-                  <Footer />
                 </>
               } />
 
@@ -111,6 +95,9 @@ function App() {
               <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
             )}
           </Body>
+
+          {/* Footer теперь с аудиоплеером */}
+          <Footer music={Music} />
         </context.Provider>
       </Router>
     </ThemeProvider>

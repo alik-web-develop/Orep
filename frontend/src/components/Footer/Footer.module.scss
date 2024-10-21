@@ -1,90 +1,168 @@
 .footerContainer {
-    width: 100%;
-    padding: 2rem 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footerWrapper {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    align-items: center;
-    padding: 1rem;
-    color: #fff; // Замените на правильную тему, если нужно.
-  }
-  
-  .logo {
-    font-weight: 600;
-    font-size: 20px;
-    color: hsla(271, 100%, 50%, 1); // Цвет primary темы
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(28, 28, 39); // Темный фон футера
+}
 
-    &:hover{
-        transform: scale(0.9);
-        transition: 0.5s;
-        cursor: pointer;
-    }
+.footerWrapper {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  padding: 1rem;
+  color: #ffffff; // Белый текст
+  position: relative;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: #9b00e8; // Яркий фиолетовый цвет
+  text-align: center;
+
+  &:hover {
+    transform: scale(0.9);
+    transition: 0.5s;
+    cursor: pointer;
   }
+}
+
+.player {
+  margin-top: 10px; /* Небольшой отступ сверху */
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение элементов */
+  align-items: center; /* Центрируем элементы по горизонтали */
+  width: 300px; /* Ограничиваем ширину плеера */
+  background-color: #191924; /* Темный фон для плеера */
+  padding: 15px; /* Увеличиваем отступы */
+  border-radius: 20px; /* Закругляем углы */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Затемняем тень */
+  border: none;
+  outline: none;
   
-  .nav {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
+}
+
+audio {
+  width: 100%; /* Плеер занимает всю ширину родителя */
+  outline: none; /* Убираем обводку */
+  background-color: #191924; /* Цвет фона плеера */
+  border-radius: 5px; /* Закругляем углы плеера */
+  color: #fff; /* Цвет текста */
+  margin-top: 5px; /* Отступ сверху */
+  border: none;
+  outline: none;
+}
+/* Стилизация ползунка */
+audio::-webkit-media-controls-panel {
+  background-color: #191924; /* Фон панели управления */
+    border: none; /* Убираем общую рамку */
+  outline: none;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  color: #fff; /* Цвет текста текущего времени и оставшегося времени */
+    border: none; /* Убираем общую рамку */
+  outline: none;
+ 
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button {
+  color: #fff; /* Цвет кнопок и слайдера */
+    border: none; /* Убираем общую рамку */
+  outline: none;
+  
+}
+
+/* Стили для ползунка (более специфично для Webkit) */
+audio::-webkit-media-controls-timeline {
+  background-color: #191924; /* Цвет фона ползунка */
+    border: none; /* Убираем общую рамку */
+  outline: none;
+}
+
+audio::-webkit-slider-thumb {
+  background: #fff;
+    border: none; /* Убираем общую рамку */
+  outline: none;
+}
+
+.audio-controls {
+  display: flex; /* Используем flex для размещения кнопок */
+  justify-content: center; /* Центрируем кнопки */
+  margin-top: 10px; /* Отступ сверху */
+}
+
+
+
+
+.audio-slider {
+  width: 100%; /* Слайдер занимает всю ширину */
+  margin-top: 5px; /* Отступ сверху */
+}
+
+
+.nav {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
-  
-    @media (max-width: 768px) {
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      text-align: center;
-      font-size: 12px;
-    }
-  }
-  
-  .navLink {
-    color: #fff; // Цвет текста primary темы
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.2s ease-in-out;
-  
-    &:hover {
-      color: hsla(271, 100%, 50%, 1); // Цвет primary темы
-      scale: 0.9;
-      transition: 0.5s;
-    }
-  
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
-  
-  .socialMediaIcons {
-    display: flex;
-    margin-top: 1rem;
-  }
-  
-  .socialMediaIcon {
-    display: inline-block;
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    color: #fff; // Цвет текста primary темы
-    transition: color 0.2s ease-in-out;
-  
-    &:hover {
-      color: hsla(271, 100%, 50%, 1); // Цвет primary темы
-      transform: scale(0.9);
-    }
-  }
-  
-  .copyright {
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: #888; // Цвет soft2 темы
     text-align: center;
+    font-size: 12px;
   }
-  
+}
+
+.navLink {
+  color: #ffffff; // Белый текст
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #9b00e8; // Яркий фиолетовый цвет
+    scale: 0.9;
+    transition: 0.5s;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.socialMediaIcons {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.socialMediaIcon {
+  display: inline-block;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  color: #ffffff; // Белый текст
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #9b00e8; // Яркий фиолетовый цвет
+    transform: scale(0.9);
+  }
+}
+
+.copyright {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #888888; // Серый цвет
+  text-align: center;
+}
