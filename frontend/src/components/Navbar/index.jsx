@@ -8,7 +8,7 @@ import NavLinkDrp from './NavLinksDrp.jsx';
 import { useTranslation } from "react-i18next"
 import './style.scss';
 import { context } from "../../store"
-import LoginForm from '../Authentication/index.jsx';
+import LoginForm from '../Authentication/index.jsx'
 
 function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);

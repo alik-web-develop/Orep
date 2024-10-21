@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import './style.scss';
+import { BsFacebook } from "react-icons/bs";
+import { SiGoogle } from "react-icons/si";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 import { useTranslation } from "react-i18next";
+import { SlSocialSteam } from "react-icons/sl";
 
 const LoginForm = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -13,6 +16,9 @@ const LoginForm = () => {
   const [regName, setRegName] = useState("");
   const [regPass, setRegPass] = useState("");
   const [regPassConf, setRegPassConf] = useState("");
+  
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Состояние авторизации
+
   const { t, i18n: { changeLanguage } } = useTranslation();
 
   useEffect(() => {
@@ -23,6 +29,13 @@ const LoginForm = () => {
     };
     window.addEventListener("click", handleWindowClick);
     return () => window.removeEventListener("click", handleWindowClick);
+  }, []);
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) {
+      setIsLoggedIn(true);
+    }
   }, []);
 
   const toggleModal = () => {
@@ -61,7 +74,6 @@ const LoginForm = () => {
     if (regName.length > 0 && regPass.length > 0) {
       if (regPass === regPassConf) {
         try {
-          // Проверяем, существует ли пользователь
           const response = await fetch("http://localhost:3000/users");
           const users = await response.json();
           const existingUser = users.find((user) => user.username === regName);
@@ -71,7 +83,6 @@ const LoginForm = () => {
             return;
           }
 
-          // Добавляем нового пользователя
           const newUser = { username: regName, password: regPass };
           await fetch("http://localhost:3000/users", {
             method: "POST",
@@ -107,6 +118,8 @@ const LoginForm = () => {
       );
 
       if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
+        setIsLoggedIn(true);
         showAlert("Successfully logged in", "success");
       } else {
         showAlert("Incorrect credentials provided", "error");
@@ -120,13 +133,19 @@ const LoginForm = () => {
     setLoginPass("");
   };
 
+  const logoutFn = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    showAlert("Successfully logged out", "success");
+  };
+
   return (
     <div className="main_div_modal">
-      <button className="connect_login" onClick={toggleModal}>
-        {t("login.login")}
+      <button className="connect_login" onClick={isLoggedIn ? logoutFn : toggleModal}>
+        {isLoggedIn ? "Logout" : t("login.login")}
       </button>
 
-      {isModalVisible && (
+      {isModalVisible && !isLoggedIn && (
         <div className="modal" style={{ display: "flex" }}>
           <div className={`modal-content-modal ${isModalVisible ? "modal-open" : ""}`}>
             <div className={`container ${isRightPanelActive ? "right-panel-active" : ""}`} id="container">
@@ -135,13 +154,13 @@ const LoginForm = () => {
                   <h1>{t("login.signUp")}</h1>
                   <div className="social-container">
                     <a href="#" className="social">
-                      <i className="fab fa-facebook-f"></i>
+                      <i><BsFacebook /></i>
                     </a>
                     <a href="#" className="social">
-                      <i className="fab fa-google-plus-g"></i>
+                      <i><SiGoogle /></i>
                     </a>
                     <a href="#" className="social">
-                      <i className="fab fa-linkedin-in"></i>
+                      <i><SlSocialSteam /></i>
                     </a>
                   </div>
                   <span>{t("login.registerDesc")}</span>
@@ -174,13 +193,13 @@ const LoginForm = () => {
                   <h1>{t("login.signIn")}</h1>
                   <div className="social-container">
                     <a href="#" className="social">
-                      <i className="fab fa-facebook-f"></i>
+                      <i><BsFacebook /></i>
                     </a>
                     <a href="#" className="social">
-                      <i className="fab fa-google-plus-g"></i>
+                      <i><SiGoogle /></i>
                     </a>
                     <a href="#" className="social">
-                      <i className="fab fa-linkedin-in"></i>
+                      <i><SlSocialSteam /></i>
                     </a>
                   </div>
                   <span>или используйте свой аккаунт</span>
@@ -205,14 +224,14 @@ const LoginForm = () => {
 
               <div className="overlay-container">
                 <div className="overlay">
-                  <div className="overlay-panel overlay-left" id="overlat_right">
+                  <div className="overlay-panel overlay-left">
                     <h1>{t("login.loginGreetings")}</h1>
                     <p>{t("login.loginDesc")}</p>
                     <button className="ghost" onClick={handleSignIn}>
                       {t("login.signIn")}
                     </button>
                   </div>
-                  <div className="overlay-panel overlay-right" id="overlat_left">
+                  <div className="overlay-panel overlay-right">
                     <h1>{t("login.registerGreetings")}</h1>
                     <p>{t("login.registerDesc")}</p>
                     <button className="ghost" onClick={handleSignUp}>
@@ -222,10 +241,6 @@ const LoginForm = () => {
                 </div>
               </div>
             </div>
-
-            <span className="close-btn" onClick={toggleModal}>
-              &times;
-            </span>
           </div>
         </div>
       )}
