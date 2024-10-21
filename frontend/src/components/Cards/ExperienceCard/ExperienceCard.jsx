@@ -10,12 +10,38 @@ function ExperienceCard({ experience }) {
     const [dislikes, setDislikes] = useState(0);
 
     useEffect(() => {
-        // Fetch likes and dislikes from the server when the component mounts
+        // Получаем лайки и дизлайки с сервера только при монтировании компонента
+        let isMounted = true;
         axios.get(`http://localhost:3000/experiences/${experience.id}`)
             .then(response => {
-                setLikes(response.data.likes);
-                setDislikes(response.data.dislikes);
+                if (isMounted) {
+                    setLikes(response.data.likes);
+                    setDislikes(response.data.dislikes);
+                }
+            })
+            .catch(error => {
+                // Если записи нет, создаем новую
+                if (error.response && error.response.status === 404) {
+                    axios.post('http://localhost:3000/experiences', {
+                        id: experience.id,
+                        likes: 0,
+                        dislikes: 0
+                    }).then(() => {
+                        if (isMounted) {
+                            setLikes(0);
+                            setDislikes(0);
+                        }
+                    }).catch(err => {
+                        console.error('Ошибка при создании новой записи:', err);
+                    });
+                } else {
+                    console.error('Ошибка при загрузке данных:', error);
+                }
             });
+
+        return () => {
+            isMounted = false;
+        };
     }, [experience.id]);
 
     const handleLikeClick = () => {
@@ -25,11 +51,14 @@ function ExperienceCard({ experience }) {
         }
         const newLikedState = !liked;
         setLiked(newLikedState);
-        setLikes(newLikedState ? likes + 1 : likes - 1);
+        const updatedLikes = newLikedState ? likes + 1 : likes - 1;
+        setLikes(updatedLikes);
 
-        // Update likes on the server
+        // Обновляем лайки на сервере
         axios.patch(`http://localhost:3000/experiences/${experience.id}`, {
-            likes: newLikedState ? likes + 1 : likes - 1
+            likes: updatedLikes
+        }).catch(error => {
+            console.error('Ошибка при обновлении лайков:', error);
         });
     };
 
@@ -40,11 +69,13 @@ function ExperienceCard({ experience }) {
         }
         const newDislikedState = !disliked;
         setDisliked(newDislikedState);
-        setDislikes(newDislikedState ? dislikes + 1 : dislikes - 1);
+        const updatedDislikes = newDislikedState ? dislikes + 1 : dislikes - 1;
+        setDislikes(updatedDislikes);
 
-        // Update dislikes on the server
         axios.patch(`http://localhost:3000/experiences/${experience.id}`, {
-            dislikes: newDislikedState ? dislikes + 1 : dislikes - 1
+            dislikes: updatedDislikes
+        }).catch(error => {
+            console.error('Ошибка при обновлении дизлайков:', error);
         });
     };
 

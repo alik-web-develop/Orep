@@ -6,12 +6,11 @@ import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import ExperienceCard from '../Cards/ExperienceCard/ExperienceCard.jsx';
-import experiences from '../../db/Expiriences.json';
+import experiences from '../../db/Expiriences.json';  // Импортируем статичные данные опыта
 import AnimatedComponent from '../AnimationComp/index.jsx';
 import styles from './Experience.module.scss';
-import { useTranslation } from "react-i18next"
-import BgAnimation from '../bg_anim/BgAnimation.jsx'
-import db from '../../../db.json'
+import { useTranslation } from "react-i18next";
+import BgAnimation from '../bg_anim/BgAnimation.jsx';
 
 function Experience() {
     const { t, i18n: { changeLanguage } } = useTranslation();
@@ -28,8 +27,8 @@ function Experience() {
                     <Timeline>
 
                         {experiences.map((experience, index) => (
-                            <AnimatedComponent>
-                                <TimelineItem key={index}>
+                            <AnimatedComponent key={experience.id}>
+                                <TimelineItem>
                                     <TimelineSeparator>
                                         <TimelineDot variant="outlined" color="secondary" />
                                         {index !== experiences.length - 1 && (
@@ -47,6 +46,6 @@ function Experience() {
             </div>
         </div>
     );
-};
+}
 
 export default Experience;

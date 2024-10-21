@@ -4,16 +4,106 @@
       "id": "837d",
       "username": "admin",
       "password": "Admin123"
+    },
+    {
+      "id": "4e06",
+      "username": "Hello",
+      "password": "Qwert123"
     }
   ],
   "experiences": [
     {
       "id": "1",
-      "role": "Developer",
-      "company": "Tech Co",
-      "date": "2020-2021",
-      "likes": 11,
-      "dislikes": 2
+      "role": "DevOps & Fullstack Engineering Intern",
+      "company": "Flipr Innovations Pvt. Ltd.",
+      "date": "Aug 2023 - July 2023",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": "2",
+      "role": "Frontend Engineer Intern",
+      "company": "Neurobit",
+      "date": "June 2023 - Present",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": "3",
+      "role": "Fullstack Externship",
+      "company": "Flipr",
+      "date": "June 2023 - July 2023",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": "4",
+      "role": "Open Source Contributor",
+      "company": "GirlScript Summer of Code",
+      "date": "May 2023 - Present",
+      "likes": 2,
+      "dislikes": 0
+    },
+    {
+      "id": "5",
+      "role": "Android Developer",
+      "company": "DSC KIIT",
+      "date": "Nov 2021 - Present",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": "6",
+      "role": "Android Developer Intern",
+      "company": "Rudraksha Welfare Foundation",
+      "date": "June 2021 - Oct 2021",
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
+    },
+    {
+      "id": 0,
+      "likes": 0,
+      "dislikes": 0
     }
   ]
 }
