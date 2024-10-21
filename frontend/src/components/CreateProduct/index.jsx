@@ -9,24 +9,23 @@ function CreateProduct({ addProduct }) {
         price: ""
     });
     const { t, i18n: { changeLanguage } } = useTranslation();
-    // Обработчик изменения данных в форме
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setNewProduct((prev) => ({ ...prev, [name]: value }));
     };
 
-    // Обработчик отправки формы
     const handleSubmit = (e) => {
         e.preventDefault();
-        const id = Date.now(); // Генерируем уникальный ID для нового продукта
+        const id = Date.now(); 
         const newProductData = { ...newProduct, id };
 
-        // Добавляем продукт в LocalStorage
+
         const storedProducts = JSON.parse(localStorage.getItem("products")) || [];
         localStorage.setItem("products", JSON.stringify([...storedProducts, newProductData]));
 
-        addProduct(newProductData); // Передаем новый продукт в функцию addProduct
-        setNewProduct({ img: "", title: "", desc: "", price: "" }); // Очищаем форму
+        addProduct(newProductData); 
+        setNewProduct({ img: "", title: "", desc: "", price: "" });
     };
 
     return (

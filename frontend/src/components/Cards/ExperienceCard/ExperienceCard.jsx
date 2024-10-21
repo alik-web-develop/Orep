@@ -1,19 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ExperienceCard.scss';
 import { BiDislike, BiSolidDislike, BiLike, BiSolidLike } from "react-icons/bi";
+import axios from 'axios';
 
 function ExperienceCard({ experience }) {
     const [liked, setLiked] = useState(false);
     const [disliked, setDisliked] = useState(false);
+    const [likes, setLikes] = useState(0);
+    const [dislikes, setDislikes] = useState(0);
 
-    function handleLikeClick() {
-        setLiked(!liked);
-        if (disliked) setDisliked(false);
+    useEffect(() => {
+        // Fetch likes and dislikes from the server when the component mounts
+        axios.get(`http://localhost:3000/experiences/${experience.id}`)
+            .then(response => {
+                setLikes(response.data.likes);
+                setDislikes(response.data.dislikes);
+            });
+    }, [experience.id]);
+
+    const handleLikeClick = () => {
+        if (disliked) {
+            setDisliked(false);
+            setDislikes(dislikes - 1);
+        }
+        const newLikedState = !liked;
+        setLiked(newLikedState);
+        setLikes(newLikedState ? likes + 1 : likes - 1);
+
+        // Update likes on the server
+        axios.patch(`http://localhost:3000/experiences/${experience.id}`, {
+            likes: newLikedState ? likes + 1 : likes - 1
+        });
     };
 
-    function handleDislikeClick() {
-        setDisliked(!disliked);
-        if (liked) setLiked(false);
+    const handleDislikeClick = () => {
+        if (liked) {
+            setLiked(false);
+            setLikes(likes - 1);
+        }
+        const newDislikedState = !disliked;
+        setDisliked(newDislikedState);
+        setDislikes(newDislikedState ? dislikes + 1 : dislikes - 1);
+
+        // Update dislikes on the server
+        axios.patch(`http://localhost:3000/experiences/${experience.id}`, {
+            dislikes: newDislikedState ? dislikes + 1 : dislikes - 1
+        });
     };
 
     return (
@@ -46,10 +78,10 @@ function ExperienceCard({ experience }) {
             </div>
             <div className="rated">
                 <span onClick={handleLikeClick} style={{ cursor: 'pointer' }}>
-                    {liked ? <BiSolidLike /> : <BiLike />}
+                    {liked ? <BiSolidLike /> : <BiLike />} {likes}
                 </span>
                 <span onClick={handleDislikeClick} style={{ cursor: 'pointer' }}>
-                    {disliked ? <BiSolidDislike /> : <BiDislike />}
+                    {disliked ? <BiSolidDislike /> : <BiDislike />} {dislikes}
                 </span>
             </div>
         </div>

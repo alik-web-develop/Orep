@@ -5,5 +5,15 @@
       "username": "admin",
       "password": "Admin123"
     }
+  ],
+  "experiences": [
+    {
+      "id": "1",
+      "role": "Developer",
+      "company": "Tech Co",
+      "date": "2020-2021",
+      "likes": 11,
+      "dislikes": 2
+    }
   ]
 }

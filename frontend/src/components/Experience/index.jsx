@@ -11,6 +11,7 @@ import AnimatedComponent from '../AnimationComp/index.jsx';
 import styles from './Experience.module.scss';
 import { useTranslation } from "react-i18next"
 import BgAnimation from '../bg_anim/BgAnimation.jsx'
+import db from '../../../db.json'
 
 function Experience() {
     const { t, i18n: { changeLanguage } } = useTranslation();
