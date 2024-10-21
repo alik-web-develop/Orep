@@ -66,6 +66,19 @@
             "registerDesc": "Enter your personal details and start learning with us.", 
             "loginDesc": "To stay in touch with us, please sign in with your personal information.",
             "forgotPass": "Forgot Password?"
+        },
+        "createProduct": {
+            "createProduct":"Create New Product",
+            "img":"Image URL",
+            "title":"Title",
+            "desc":"Description",
+            "price":"Price",
+            "add":"Add Product"
+        },
+        "courses":{
+            "title":"Courses",
+            "showProducts":"Show Products",
+            "createProduct":"Create Product"
         }
     }
 }

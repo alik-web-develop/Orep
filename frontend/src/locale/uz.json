@@ -66,6 +66,19 @@
             "registerDesc": "Shaxsiy ma'lumotlaringizni kiriting va biz bilan mashg'ulotni boshlang.", 
             "loginDesc": "Biz bilan aloqada bo'lish uchun shaxsiy ma'lumotlaringiz bilan tizimga kiring..",
             "forgotPass": "Parolingiz esdan chiqdimi?"
+        },
+        "createProduct": {
+            "createProduct":"Yangi mahsulot yaratish",
+            "img":"Rasmning URL manzili",
+            "title":"Nomi",
+            "desc":"Tavsif",
+            "price":"Narx",
+            "add":"Mahsulotni Qo'shish"
+        },
+        "courses":{
+            "title":"Kurslar",
+            "showProducts":"Mahsulotlarni ko'rsatish",
+            "createProduct":"Mahsulot yaratish"
         }
     }
 }

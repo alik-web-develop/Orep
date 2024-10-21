@@ -1,9 +1,11 @@
 .courses-products-wrapper {
-    padding: 40px;
+    padding: 100px 0;
     background: linear-gradient(343.07deg, rgba(132, 59, 206, 0.06) 5.71%, rgba(132, 59, 206, 0) 64.83%);
-
-    height: 100vh;
-
+    height: 150vh;
+    overflow: auto;
+    @media (max-width: 960px) {
+        padding: 50px 0;
+    }
     h1 {
         color: #ffffff;
         text-align: center;
@@ -12,8 +14,10 @@
 
     .products-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 390px));
         gap: 20px;
+        justify-content: center;
+        height: auto;
     }
 
     .product-item {
@@ -39,10 +43,11 @@
             width: 100%;
             height: 550px;
             overflow: hidden;
+
             img {
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                object-fit: contain, cover;
             }
         }
 
@@ -61,6 +66,7 @@
             transition: max-height 0.3s ease;
 
         }
+
         .manual-icon {
             position: absolute;
             left: 30px;
@@ -73,6 +79,39 @@
             color: #8a2be2;
             padding-top: 10px;
             font-weight: bold;
+
+        }
+
+    }
+
+    .main-div-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .toggle-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+
+        button {
+            padding: 10px 20px;
+            background: hsla(271, 100%, 50%, 0.2);
+            background: linear-gradient(225deg, hsla(271, 100%, 50%, 0.2) 0%, hsla(294, 100%, 50%, 0.2) 100%);
+            background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 0.2) 0%, hsla(294, 100%, 50%, 0.2) 100%);
+            background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 0.2) 0%, hsla(294, 100%, 50%, 0.2) 100%);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: darken(hsla(271, 100%, 50%, 0.2), 10%);
+            }
         }
     }
+
 }

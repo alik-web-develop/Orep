@@ -21,17 +21,30 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-    height: 80px;
+    background: rgba(132, 59, 206, 0.06);
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+    width: 90px;
+    height: 100px;
 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    width: 100px;
+    background: rgba(132, 59, 206, 0.06);
+
+}   
 
 /* Handle on hover */
-::-webkit-scrollbar:hover {
-    ::-webkit-scrollbar-thumb {
-        background: #626970;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(132, 59, 206, 0.06);
+
 }
+
+
 
 @import url('https://fonts.googleapis.com/css?family=Exo:400,700');
 
