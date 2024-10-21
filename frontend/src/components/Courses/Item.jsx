@@ -2,6 +2,7 @@ import React, { useContext, memo, useState } from 'react';
 import { PiShoppingCart, PiShoppingCartFill } from "react-icons/pi";
 import { context } from "../../store";
 import CoursesJSON from "../../db/Courses.json";
+import CreateProduct from '../CreateProduct';
 
 function Item(props) {
     const { state, dispatch } = useContext(context);

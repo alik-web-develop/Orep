@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next"
 import './style.scss';
 import { context } from "../../store"
 import LoginForm from '../Authentication/index.jsx'
-
+import CreateProduct from '../CreateProduct/index.jsx';
 function Navbar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,6 +47,7 @@ function Navbar(props) {
           <li className="navbar__item"><NavLink to="/#experience">{t('navigation.experience')}</NavLink></li>
           <li className="navbar__item"><NavLink to="/#projects">{t('navigation.projects')}</NavLink></li>
           <li className="navbar__item"><NavLink to="/#education">{t('navigation.education')}</NavLink></li>
+          <li className="navbar__item"><NavLink to="/#create">create</NavLink></li>
           <li className="navbar__item"><NavLink to="/courses">{t('navigation.courses')}</NavLink></li>
           <NavLink to="/basket" onClick={() => setIsOpen(false)} className="navbar__basket"><PiShoppingCart /></NavLink>
           <NavLinkDrp items={state.languages} activateFn={activateLang} />

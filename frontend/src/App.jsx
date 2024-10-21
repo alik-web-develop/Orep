@@ -21,6 +21,7 @@ import AnimatedComponent from './components/AnimationComp';
 import { useTranslation } from "react-i18next";
 import { context, globalReducer, initialState } from "./store";
 import LoginForm from "./components/Authentication/index.jsx";
+import CreateProduct from "./components/CreateProduct/index.jsx";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
