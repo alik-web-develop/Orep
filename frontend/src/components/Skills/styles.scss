@@ -28,7 +28,6 @@ $purple: hsla(271, 100%, 50%, 0.20);
 }
 
 .skills-wrapper {
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -188,3 +187,51 @@ $purple: hsla(271, 100%, 50%, 0.20);
     height: 16px;
   }
 }
+.skills-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center; // Центрирование по горизонтали
+  align-items: center;
+  background: radial-gradient(circle at top, $dark, transparent 80%),
+              linear-gradient(to top, transparent, rgba($dark, 0.4) 70%),
+              linear-gradient(to bottom, $dark 0%, transparent 70%),
+              $dark-purple;
+  animation: bg 10s infinite;
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 20px;
+    justify-content: flex-start; // Для мобильных версий по умолчанию выравниваем по верху
+  }
+}
+
+.skills-wrapper {
+  display: flex;
+  justify-content: center; // Центрируем по горизонтали на десктопе
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  gap: 12px;
+  padding: 0 20px; // Немного добавляем отступы по краям для широких экранов
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.skills-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // Две колонки
+  grid-gap: 30px; // Отступы между карточками
+  margin-top: 30px;
+  justify-items: center; // Центрируем карточки по горизонтали
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(1, 1fr); // Одна колонка на планшетах и мобильных
+    gap: 20px;
+  }
+}
+
