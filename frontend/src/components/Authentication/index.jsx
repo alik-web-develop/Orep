@@ -16,7 +16,7 @@ const LoginForm = () => {
   const [regName, setRegName] = useState("");
   const [regPass, setRegPass] = useState("");
   const [regPassConf, setRegPassConf] = useState("");
-  
+
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Состояние авторизации
 
   const { t, i18n: { changeLanguage } } = useTranslation();
@@ -67,11 +67,27 @@ const LoginForm = () => {
       style: { background },
     }).showToast();
   };
+  const handleNameChange = (e) => {
+    const nameValue = e.target.value;
+    const lettersPattern = /^[A-Za-zА-Яа-яЁё]*$/;
 
+    if (lettersPattern.test(nameValue) || nameValue === "") {
+      setRegName(nameValue);
+    } else {
+      showAlert("Please enter letters only", "error");
+    }
+  };
   const registerFn = async (e) => {
     e.preventDefault();
 
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
     if (regName.length > 0 && regPass.length > 0) {
+      if (!passwordPattern.test(regPass)) {
+        showAlert("Password must be at least 8 characters long, contain one uppercase letter, one lowercase letter, one number, and one special character", "error");
+        return;
+      }
+
       if (regPass === regPassConf) {
         try {
           const response = await fetch("http://localhost:3000/users");
@@ -105,6 +121,7 @@ const LoginForm = () => {
       showAlert("Please, fill in all fields", "error");
     }
   };
+
 
   const loginFn = async (e) => {
     e.preventDefault();
@@ -168,7 +185,7 @@ const LoginForm = () => {
                     type="text"
                     placeholder={t("login.name")}
                     value={regName}
-                    onChange={(e) => setRegName(e.target.value)}
+                    onChange={handleNameChange}
                   />
                   <input
                     type="password"

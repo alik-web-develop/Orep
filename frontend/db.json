@@ -1,48 +1,9 @@
 {
-  "Bio": [
-    {
-      "name": "FullFusion",
-      "roles": [
-        "Full Stack Developers",
-        "Android Developers",
-        "Programmers"
-      ],
-      "description": "We are motivated and versatile individuals...",
-      "github_mal4ik": "https://github.com/mal4ik-0",
-      "github_bulyon": "https://github.com/bulyon228",
-      "resume": "#",
-      "linkedin": "https://www.linkedin.com",
-      "twitter": "https://twitter.com/RishavChanda",
-      "insta": "https://www.instagram.com",
-      "facebook": "https://www.facebook.com",
-      "id": "a665"
-    }
-  ],
   "users": [
     {
       "id": "837d",
-      "username": "1212",
-      "password": "1212"
-    },
-    {
-      "id": "291b",
-      "username": "qw",
-      "password": "qwqw"
-    },
-    {
-      "id": "cfd8",
-      "username": "qwe",
-      "password": "qwe1"
-    },
-    {
-      "id": "e8d2",
-      "username": "12",
-      "password": "1212"
-    },
-    {
-      "id": "9b08",
-      "username": "121212",
-      "password": "1212"
+      "username": "admin",
+      "password": "Admin123"
     }
   ]
 }
